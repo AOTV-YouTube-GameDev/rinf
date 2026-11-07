@@ -1,0 +1,3362 @@
+<html lang="ja" dir="ltr"><head>
+      <meta data-sandbox-injected="" http-equiv="Content-Security-Policy" content="
+          default-src 'none';
+          base-uri 'none';
+          connect-src https://fonts.gstatic.com https://www.gstatic.com;
+          font-src https://fonts.gstatic.com data:;
+          form-action 'none';
+          
+          worker-src blob: https://*.scf.usercontent.goog;
+          img-src data: https://encrypted-tbn0.gstatic.com https://encrypted-tbn1.gstatic.com https://encrypted-tbn2.gstatic.com https://encrypted-tbn3.gstatic.com ;
+          media-src 'none';
+          object-src 'none';
+          script-src 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://widgetlibs.static.usercontent.goog https://*.scf.usercontent.goog;
+          style-src 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.gstatic.com/;">
+      <meta data-sandbox-injected="" charset="UTF-8">
+      <meta data-sandbox-injected="" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="enable-onep-api" content="false"><script data-sandbox-injected="true">(function(){var g=Object.defineProperty,k=globalThis,l=function(a,b){if(b)a:{var c=k;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&g(c,a,{configurable:!0,writable:!0,value:b})}};l("Promise.withResolvers",function(a){return a?a:function(){var b,c;return{promise:new Promise(function(d,e){b=d;c=e}),resolve:b,reject:c}}});var m=function(a){return typeof a==="object"&&a!==null&&"kind"in a&&typeof a.kind==="string"&&("payload"in a||a.kind==="___CROSS_FRAME_HANDSHAKE___")},n=class{constructor(){this.j=new Map}i(a){var b=a.data;if(m(b)){let c=b.payload;if(b=this.j.get(b.kind))(a=a.ports&&a.ports.length>0?a.ports:void 0)?b(c,a):b(c)}}sendMessage(a,b,c){if(!this.port)throw Error("a");a={kind:String(a),payload:b||{}};c&&c.length>0?this.port.postMessage(a,c):this.port.postMessage(a)}},p=async function(a){var b=window.parent;
+return a.h?{}:new Promise(c=>{var d=e=>{e.source===b&&m(e.data)&&e.data.kind==="___CROSS_FRAME_HANDSHAKE___"&&(window.removeEventListener("message",d),a.port=e.ports[0],a.port.onmessage=a.i.bind(a),a.h=!0,c(e.data.payload||{}))};window.addEventListener("message",d)})},q=class extends n{constructor(){super(...arguments);this.h=!1}};if(typeof window!=="undefined"&&window.history){let a=window.history.replaceState.bind(window.history);window.history.replaceState=(c,d,e)=>{try{a(c,d,e)}catch{}};let b=window.history.pushState.bind(window.history);window.history.pushState=(c,d,e)=>{try{b(c,d,e)}catch{}}}
+if(typeof window!=="undefined"&&window.fetch){let a=window.fetch.bind(window);window.fetch=async(...b)=>{try{return await a(...b)}catch(c){b=b[0];b=typeof b==="string"?b:b&&typeof b==="object"&&"url"in b?String(b.url||""):String(b||"");if(b.includes("tracking")||b.includes("analytics")||b.includes("beacon"))return new Response(null,{status:204});throw c;}}}var {promise:r,resolve:t}=Promise.withResolvers(),{promise:u,resolve:v}=Promise.withResolvers(),w=!1;
+(async function(){var a=new q,b=await p(a);b&&b.enableSandboxToEditorSync&&(w=!!b.enableSandboxToEditorSync);if(b&&b.initialPayload){let c=b.initialPayload;window.initialPayload=c;window.setTimeout(()=>{window.dispatchEvent(new MessageEvent("message",{data:c}))},0)}t(a);(a=a.port)&&v(a)})();function x(a){r.then(b=>{b.sendMessage("ERROR",{error:a})})}window.onerror=(a,b,c,d,e)=>{x(e);return!0};
+window.onunhandledrejection=a=>{var b=String(a.reason||"");b.includes("Failed to fetch")||b.includes("Content Security Policy")||b.includes("replaceState")||x(Error(a.reason));a.preventDefault()};
+window.document.addEventListener("DOMContentLoaded",()=>{r.then(a=>{a.sendMessage("ISOLATE_READY",{});var b=window.document.querySelector("#resize-target")||window.document.body,c=NaN,d=NaN,e=!1;(new ResizeObserver(()=>{e||(e=!0,window.requestAnimationFrame(()=>{e=!1;var f=Math.ceil(b.scrollHeight),h=Math.ceil(b.scrollWidth);f===c&&h===d||f===0&&h===0||(c=f,d=h,a.sendMessage("RESIZE",{height:f,width:h}))}))})).observe(b);if(w){let f;(new MutationObserver(()=>{f&&window.clearTimeout(f);f=window.setTimeout(()=>
+{f=void 0;a.sendMessage("HTML_CHANGED",{html:"<!DOCTYPE html>\n"+window.document.documentElement.outerHTML})},500)})).observe(window.document.documentElement,{attributes:!0,childList:!0,subtree:!0,characterData:!0})}})});window.addEventListener("resizeRequest",()=>{r.then(a=>{var b=window.document.querySelector("#resize-target")||window.document.body,c=Math.ceil(b.scrollHeight);b=Math.ceil(b.scrollWidth);c===0&&b===0||a.sendMessage("MANUAL_RESIZE",{height:c,width:b})})});
+function y(a){var b=null;a instanceof Element?b=a:a&&a.nodeType===Node.TEXT_NODE&&(b=a.parentElement);if(!b)return null;for(a=b;a&&a!==window.document.body;){if(a.matches('a,button,input,textarea,select,option,details,summary,area,[jsaction],[data-jsaction],[role],[tabindex]:not([tabindex="-1"])'))return z(a);if(a instanceof HTMLElement&&a.isContentEditable)return z(a);a=a.parentElement}return null}
+function z(a){var b={tagName:a.tagName.toUpperCase(),attributes:{}},c=["role","jsaction","data-jsaction","tabindex"];for(let d of c)c=a.getAttribute(d),c!==null&&(b.attributes[d]=c);a instanceof HTMLElement&&a.isContentEditable&&(b.isContentEditable=!0);return b}window.addEventListener("click",a=>{var b=(a=a.target)?y(a):null;r.then(c=>{c.sendMessage("CLICK",{matchedNode:b})})},!0);
+window.addEventListener("request_window_open",a=>{var b=a.detail;r.then(c=>{c.sendMessage("REQUEST_WINDOW_OPEN",{url:b.url,target:b.target,features:b.features})})});window.sandboxConsoleLog=(a,b)=>{r.then(c=>{c.sendMessage("CONSOLE_LOG",{logLevel:a,message:b})})};if(document.querySelector('meta[name="enable-onep-api"]')?.getAttribute("content")==="true"){let a=!1;window.claimPortReady=()=>{if(a)return null;a=!0;return u}}window.logError=x;}).call(this);</script><script>(function(){window.open=(a,b,d)=>{var c;a&&(c=a instanceof URL?a.toString():String(a));window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:c,target:b,features:d}}));return null};var e,f,g;function h(a){a.button===0&&((e=a=(a.target instanceof Element?a.target:null)?.closest("a")??void 0)?(a=a.getBoundingClientRect(),f=a.left,g=a.top):g=f=void 0)}function k(){g=f=e=void 0}window.addEventListener("pointerdown",h,!0);window.addEventListener("mousedown",h,!0);
+window.addEventListener("pointercancel",k,!0);
+window.addEventListener("click",a=>{var b=(a.target instanceof Element?a.target:null)?.closest("a"),d=b?.getBoundingClientRect();d=a.detail>0&&b!=null&&e===b&&d!==void 0&&f!==void 0&&g!==void 0&&(Math.abs(d.left-f)>5||Math.abs(d.top-g)>5);k();if(b&&b.hasAttribute("href")){b=b.getAttribute("href")??"";var c=b.trim();c.startsWith("#")||(c=c.replace(/[\u0000-\u0020]+/g,""),c===""||/^javascript:/i.test(c)?a.preventDefault():d||a.defaultPrevented?(a.preventDefault(),a.stopPropagation()):(a.preventDefault(),
+a.stopPropagation(),window.dispatchEvent(new CustomEvent("request_window_open",{detail:{url:b,target:"_blank"}}))))}},!0);}).call(this);</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><title>Generated Interactive Widget</title><script type="module" crossorigin="">
+import { jsx, jsxs } from 'https://widgetlibs.static.usercontent.goog/react/jsx-runtime-Dc9ViRTo.js';
+import React, { useState, useRef, useEffect } from 'https://widgetlibs.static.usercontent.goog/react-Dd1pKoqe.js';
+import ReactDOM from 'https://widgetlibs.static.usercontent.goog/react-dom/client-BTuQ-l8_.js';
+import { ErrorBoundary } from 'https://widgetlibs.static.usercontent.goog/react-error-boundary-BY2GTZrN.js';
+
+true              &&(function polyfill() {
+	const relList = document.createElement("link").relList;
+	if (relList && relList.supports && relList.supports("modulepreload")) return;
+	for (const link of document.querySelectorAll("link[rel=\"modulepreload\"]")) processPreload(link);
+	new MutationObserver((mutations) => {
+		for (const mutation of mutations) {
+			if (mutation.type !== "childList") continue;
+			for (const node of mutation.addedNodes) if (node.tagName === "LINK" && node.rel === "modulepreload") processPreload(node);
+		}
+	}).observe(document, {
+		childList: true,
+		subtree: true
+	});
+	function getFetchOpts(link) {
+		const fetchOpts = {};
+		if (link.integrity) fetchOpts.integrity = link.integrity;
+		if (link.referrerPolicy) fetchOpts.referrerPolicy = link.referrerPolicy;
+		if (link.crossOrigin === "use-credentials") fetchOpts.credentials = "include";
+		else if (link.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
+		else fetchOpts.credentials = "same-origin";
+		return fetchOpts;
+	}
+	function processPreload(link) {
+		if (link.ep) return;
+		link.ep = true;
+		const fetchOpts = getFetchOpts(link);
+		fetch(link.href, fetchOpts);
+	}
+}());
+
+const LANG = "ja";
+const DIR = "ltr";
+const iso = (s) => String(s);
+const MUSIC_PATTERNS = [
+  {
+    name: "Deep Violet Ambient",
+    padFreqs: [110, 164.81, 220, 261.63],
+    stringViolinFreqs: [440, 523.25],
+    stringCelloFreqs: [110, 130.81],
+    melodyNotes: [440, 493.88, 523.25, 587.33, 523.25, 493.88],
+    humFreq: 55,
+    echoDelay: 1.2,
+    skyGradTop: "#05010a",
+    skyGradMid: "#160524",
+    skyGradBottom: "#320840",
+    sunColor: "#ff007f"
+  },
+  {
+    name: "Neon Crimson Atmospheric",
+    padFreqs: [130.81, 196, 261.63, 329.63],
+    stringViolinFreqs: [392, 523.25],
+    stringCelloFreqs: [98, 130.81],
+    melodyNotes: [392, 523.25, 587.33, 659.25, 587.33, 523.25],
+    humFreq: 65.41,
+    echoDelay: 1.5,
+    skyGradTop: "#0d0101",
+    skyGradMid: "#2b0202",
+    skyGradBottom: "#520404",
+    sunColor: "#ff0033"
+  },
+  {
+    name: "Electric Cyan Echoes",
+    padFreqs: [146.83, 220, 293.66, 349.23],
+    stringViolinFreqs: [440, 587.33],
+    stringCelloFreqs: [110, 146.83],
+    melodyNotes: [587.33, 698.46, 659.25, 587.33, 523.25, 440],
+    humFreq: 73.42,
+    echoDelay: 1.8,
+    skyGradTop: "#01080d",
+    skyGradMid: "#031d29",
+    skyGradBottom: "#073a4d",
+    sunColor: "#00ffff"
+  },
+  {
+    name: "Toxic Green Resonance",
+    padFreqs: [98, 146.83, 196, 246.94],
+    stringViolinFreqs: [392, 493.88],
+    stringCelloFreqs: [98, 123.47],
+    melodyNotes: [493.88, 392, 440, 493.88, 587.33, 493.88],
+    humFreq: 48.99,
+    echoDelay: 1.4,
+    skyGradTop: "#010a02",
+    skyGradMid: "#052107",
+    skyGradBottom: "#0b3d10",
+    sunColor: "#39ff14"
+  },
+  {
+    name: "Cyber Orange Horizon",
+    padFreqs: [116.54, 174.61, 233.08, 277.18],
+    stringViolinFreqs: [466.16, 554.37],
+    stringCelloFreqs: [116.54, 138.59],
+    melodyNotes: [466.16, 554.37, 622.25, 554.37, 466.16, 415.3],
+    humFreq: 58.27,
+    echoDelay: 1.6,
+    skyGradTop: "#0f0501",
+    skyGradMid: "#2b1003",
+    skyGradBottom: "#4a1c05",
+    sunColor: "#ff6600"
+  },
+  {
+    name: "Magenta Deep Space",
+    padFreqs: [130.81, 174.61, 220, 261.63],
+    stringViolinFreqs: [440, 523.25],
+    stringCelloFreqs: [110, 130.81],
+    melodyNotes: [523.25, 440, 523.25, 587.33, 659.25, 523.25],
+    humFreq: 65.41,
+    echoDelay: 2,
+    skyGradTop: "#12010e",
+    skyGradMid: "#2e0323",
+    skyGradBottom: "#52063e",
+    sunColor: "#ff00d4"
+  },
+  {
+    name: "Laser Yellow Nebula",
+    padFreqs: [164.81, 246.94, 329.63, 392],
+    stringViolinFreqs: [493.88, 587.33],
+    stringCelloFreqs: [123.47, 146.83],
+    melodyNotes: [587.33, 493.88, 587.33, 659.25, 783.99, 587.33],
+    humFreq: 82.41,
+    echoDelay: 1.3,
+    skyGradTop: "#0d0b01",
+    skyGradMid: "#262203",
+    skyGradBottom: "#423d05",
+    sunColor: "#ffff00"
+  },
+  {
+    name: "Deep Ultraviolet Hum",
+    padFreqs: [130.81, 164.81, 196, 246.94],
+    stringViolinFreqs: [392, 493.88],
+    stringCelloFreqs: [98, 123.47],
+    humFreq: 65.41,
+    echoDelay: 1.7,
+    skyGradTop: "#050112",
+    skyGradMid: "#11042e",
+    skyGradBottom: "#240a54",
+    sunColor: "#9d00ff"
+  },
+  {
+    name: "Synth Pink Atmosphere",
+    padFreqs: [146.83, 196, 246.94, 293.66],
+    stringViolinFreqs: [392, 587.33],
+    stringCelloFreqs: [98, 146.83],
+    humFreq: 73.42,
+    echoDelay: 1.5,
+    skyGradTop: "#12020b",
+    skyGradMid: "#30061e",
+    skyGradBottom: "#540b35",
+    sunColor: "#ff00aa"
+  },
+  {
+    name: "Hyper Chaos Drone",
+    padFreqs: [110, 146.83, 164.81, 220],
+    stringViolinFreqs: [440, 493.88],
+    stringCelloFreqs: [110, 123.47],
+    humFreq: 55,
+    echoDelay: 2.2,
+    skyGradTop: "#020f0e",
+    skyGradMid: "#052624",
+    skyGradBottom: "#0b3d3a",
+    sunColor: "#00ffcc"
+  }
+];
+class SynthAudioEngine {
+  ctx = null;
+  ambientIntervalId = null;
+  currentStep = 0;
+  isMuted = false;
+  currentPatternIndex = 0;
+  masterGain = null;
+  humOsc = null;
+  humGain = null;
+  // Futuristic engine simulation nodes
+  engineOsc1 = null;
+  engineOsc2 = null;
+  engineFilter = null;
+  engineGain = null;
+  constructor() {
+  }
+  init() {
+    if (!this.ctx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) {
+        this.ctx = new AudioContextClass();
+        this.masterGain = this.ctx.createGain();
+        this.masterGain.gain.setValueAtTime(0.8, this.ctx.currentTime);
+        this.masterGain.connect(this.ctx.destination);
+      }
+    }
+    if (this.ctx && this.ctx.state === "suspended") {
+      this.ctx.resume();
+    }
+  }
+  setMute(mute) {
+    this.isMuted = mute;
+    if (mute) {
+      this.stopBGM();
+      this.stopEngine();
+    } else {
+      this.startBGM();
+      this.startEngine();
+    }
+  }
+  getMuted() {
+    return this.isMuted;
+  }
+  setPatternIndex(index) {
+    const nextIndex = Math.max(0, Math.min(9, index));
+    if (this.currentPatternIndex === nextIndex) return;
+    if (this.ambientIntervalId && this.ctx && this.masterGain && !this.isMuted) {
+      const time = this.ctx.currentTime;
+      this.masterGain.gain.linearRampToValueAtTime(1e-3, time + 0.3);
+      setTimeout(() => {
+        this.stopBGM();
+        this.currentPatternIndex = nextIndex;
+        if (this.ctx && this.masterGain) {
+          const nowTime = this.ctx.currentTime;
+          this.masterGain.gain.setValueAtTime(1e-3, nowTime);
+          this.startBGM();
+          this.masterGain.gain.linearRampToValueAtTime(0.8, nowTime + 0.4);
+        }
+      }, 320);
+    } else {
+      this.currentPatternIndex = nextIndex;
+    }
+  }
+  getPatternIndex() {
+    return this.currentPatternIndex;
+  }
+  startEngine() {
+    this.init();
+    if (this.isMuted || !this.ctx || !this.masterGain) return;
+    if (this.engineOsc1) return;
+    const time = this.ctx.currentTime;
+    try {
+      this.engineFilter = this.ctx.createBiquadFilter();
+      this.engineFilter.type = "lowpass";
+      this.engineFilter.frequency.setValueAtTime(180, time);
+      this.engineFilter.Q.setValueAtTime(4, time);
+      this.engineGain = this.ctx.createGain();
+      this.engineGain.gain.setValueAtTime(5e-3, time);
+      this.engineOsc1 = this.ctx.createOscillator();
+      this.engineOsc1.type = "sawtooth";
+      this.engineOsc1.frequency.setValueAtTime(45, time);
+      this.engineOsc2 = this.ctx.createOscillator();
+      this.engineOsc2.type = "triangle";
+      this.engineOsc2.frequency.setValueAtTime(90, time);
+      this.engineOsc1.connect(this.engineFilter);
+      this.engineOsc2.connect(this.engineFilter);
+      this.engineFilter.connect(this.engineGain);
+      this.engineGain.connect(this.masterGain);
+      this.engineOsc1.start(time);
+      this.engineOsc2.start(time);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  updateEnginePitch(velocity) {
+    if (!this.ctx || this.isMuted || !this.engineOsc1 || !this.engineOsc2 || !this.engineFilter) return;
+    const time = this.ctx.currentTime;
+    const factor = Math.max(0.5, Math.min(3, velocity / 160));
+    this.engineOsc1.frequency.setTargetAtTime(45 * factor, time, 0.1);
+    this.engineOsc2.frequency.setTargetAtTime(90 * factor, time, 0.1);
+    this.engineFilter.frequency.setTargetAtTime(180 + factor * 260, time, 0.15);
+  }
+  stopEngine() {
+    if (this.engineOsc1) {
+      try {
+        this.engineOsc1.stop();
+        this.engineOsc1.disconnect();
+      } catch (e) {
+      }
+      this.engineOsc1 = null;
+    }
+    if (this.engineOsc2) {
+      try {
+        this.engineOsc2.stop();
+        this.engineOsc2.disconnect();
+      } catch (e) {
+      }
+      this.engineOsc2 = null;
+    }
+    if (this.engineFilter) {
+      try {
+        this.engineFilter.disconnect();
+      } catch (e) {
+      }
+      this.engineFilter = null;
+    }
+    if (this.engineGain) {
+      try {
+        this.engineGain.disconnect();
+      } catch (e) {
+      }
+      this.engineGain = null;
+    }
+  }
+  startBGM() {
+    this.init();
+    if (this.isMuted || !this.ctx || !this.masterGain) return;
+    if (this.ambientIntervalId) return;
+    const pattern = MUSIC_PATTERNS[this.currentPatternIndex];
+    const time = this.ctx.currentTime;
+    try {
+      this.humOsc = this.ctx.createOscillator();
+      this.humGain = this.ctx.createGain();
+      this.humOsc.type = "sine";
+      this.humOsc.frequency.setValueAtTime(pattern.humFreq, time);
+      this.humGain.gain.setValueAtTime(0.18, time);
+      this.humOsc.connect(this.humGain);
+      this.humGain.connect(this.masterGain);
+      this.humOsc.start(time);
+    } catch (e) {
+      console.error(e);
+    }
+    this.ambientIntervalId = setInterval(() => {
+      if (!this.ctx || this.isMuted || !this.masterGain) return;
+      if (this.ctx.state === "suspended") return;
+      const nowTime = this.ctx.currentTime;
+      const currentPat = MUSIC_PATTERNS[this.currentPatternIndex];
+      if (currentPat.melodyNotes && currentPat.melodyNotes.length > 0) {
+        try {
+          const melodyNoteFreq = currentPat.melodyNotes[this.currentStep % currentPat.melodyNotes.length];
+          const melOsc = this.ctx.createOscillator();
+          const melGain = this.ctx.createGain();
+          const melFilter = this.ctx.createBiquadFilter();
+          melOsc.type = "sawtooth";
+          melOsc.frequency.setValueAtTime(melodyNoteFreq, nowTime);
+          melOsc.frequency.linearRampToValueAtTime(melodyNoteFreq + 4, nowTime + 0.4);
+          melOsc.frequency.linearRampToValueAtTime(melodyNoteFreq - 2, nowTime + 0.8);
+          melFilter.type = "lowpass";
+          melFilter.frequency.setValueAtTime(1400, nowTime);
+          melFilter.Q.setValueAtTime(2, nowTime);
+          melGain.gain.setValueAtTime(0, nowTime);
+          melGain.gain.linearRampToValueAtTime(0.045, nowTime + 0.08);
+          melGain.gain.exponentialRampToValueAtTime(1e-3, nowTime + 1.6);
+          melOsc.connect(melFilter);
+          melFilter.connect(melGain);
+          melGain.connect(this.masterGain);
+          const melDelay = this.ctx.createDelay();
+          const melFeedback = this.ctx.createGain();
+          melDelay.delayTime.setValueAtTime(0.24 * currentPat.echoDelay, nowTime);
+          melFeedback.gain.setValueAtTime(0.35, nowTime);
+          melGain.connect(melDelay);
+          melDelay.connect(melFeedback);
+          melFeedback.connect(melDelay);
+          melDelay.connect(this.masterGain);
+          melOsc.start(nowTime);
+          melOsc.stop(nowTime + 1.8);
+        } catch (e) {
+        }
+      }
+      currentPat.padFreqs.forEach((freq, idx) => {
+        try {
+          if (!this.ctx || !this.masterGain) return;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          const filter = this.ctx.createBiquadFilter();
+          const delay = this.ctx.createDelay();
+          const feedback = this.ctx.createGain();
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(freq + Math.sin(this.currentStep + idx) * 1.5, nowTime);
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(400 + idx * 100, nowTime);
+          filter.frequency.exponentialRampToValueAtTime(800 + idx * 50, nowTime + 3);
+          gain.gain.setValueAtTime(0, nowTime);
+          gain.gain.linearRampToValueAtTime(0.04, nowTime + 1.2);
+          gain.gain.exponentialRampToValueAtTime(1e-3, nowTime + 4.5);
+          delay.delayTime.setValueAtTime(0.35 * currentPat.echoDelay, nowTime);
+          feedback.gain.setValueAtTime(0.45, nowTime);
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+          gain.connect(delay);
+          delay.connect(feedback);
+          feedback.connect(delay);
+          delay.connect(this.masterGain);
+          osc.start(nowTime);
+          osc.stop(nowTime + 5);
+        } catch (e) {
+        }
+      });
+      currentPat.stringViolinFreqs.forEach((freq, idx) => {
+        try {
+          if (!this.ctx || !this.masterGain) return;
+          const osc1 = this.ctx.createOscillator();
+          const osc2 = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          const filter = this.ctx.createBiquadFilter();
+          osc1.type = "sawtooth";
+          osc2.type = "sawtooth";
+          osc1.frequency.setValueAtTime(freq, nowTime);
+          osc2.frequency.setValueAtTime(freq + 3, nowTime);
+          filter.type = "bandpass";
+          filter.frequency.setValueAtTime(1200 + idx * 200, nowTime);
+          filter.Q.setValueAtTime(1, nowTime);
+          gain.gain.setValueAtTime(0, nowTime);
+          gain.gain.linearRampToValueAtTime(0.0125, nowTime + 1.5);
+          gain.gain.exponentialRampToValueAtTime(1e-3, nowTime + 4.8);
+          osc1.connect(filter);
+          osc2.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+          osc1.start(nowTime);
+          osc2.start(nowTime);
+          osc1.stop(nowTime + 5);
+          osc2.stop(nowTime + 5);
+        } catch (e) {
+        }
+      });
+      currentPat.stringCelloFreqs.forEach((freq, idx) => {
+        try {
+          if (!this.ctx || !this.masterGain) return;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          const filter = this.ctx.createBiquadFilter();
+          osc.type = "sawtooth";
+          osc.frequency.setValueAtTime(freq - 1, nowTime);
+          filter.type = "lowpass";
+          filter.frequency.setValueAtTime(350, nowTime);
+          gain.gain.setValueAtTime(0, nowTime);
+          gain.gain.linearRampToValueAtTime(0.0175, nowTime + 1);
+          gain.gain.exponentialRampToValueAtTime(1e-3, nowTime + 5);
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+          osc.start(nowTime);
+          osc.stop(nowTime + 5.2);
+        } catch (e) {
+        }
+      });
+      this.currentStep++;
+    }, 3800);
+  }
+  stopBGM() {
+    if (this.ambientIntervalId) {
+      clearInterval(this.ambientIntervalId);
+      this.ambientIntervalId = null;
+    }
+    if (this.humOsc) {
+      try {
+        this.humOsc.stop();
+        this.humOsc.disconnect();
+      } catch (e) {
+      }
+      this.humOsc = null;
+    }
+    if (this.humGain) {
+      try {
+        this.humGain.disconnect();
+      } catch (e) {
+      }
+      this.humGain = null;
+    }
+  }
+  playPickupChime() {
+    this.init();
+    if (!this.ctx || this.isMuted || !this.masterGain) return;
+    const time = this.ctx.currentTime;
+    [523.25, 659.25, 783.99, 1046.5].forEach((freq, idx) => {
+      if (!this.ctx || !this.masterGain) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, time + idx * 0.08);
+      gain.gain.setValueAtTime(0.03, time + idx * 0.08);
+      gain.gain.exponentialRampToValueAtTime(1e-3, time + idx * 0.08 + 0.6);
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+      osc.start(time + idx * 0.08);
+      osc.stop(time + idx * 0.08 + 0.7);
+    });
+  }
+  playCollisionExplosion() {
+    this.init();
+    if (!this.ctx || this.isMuted || !this.masterGain) return;
+    const time = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    const filter = this.ctx.createBiquadFilter();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(90, time);
+    osc.frequency.linearRampToValueAtTime(30, time + 0.6);
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(180, time);
+    gain.gain.setValueAtTime(0.12, time);
+    gain.gain.exponentialRampToValueAtTime(1e-3, time + 0.6);
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.masterGain);
+    osc.start(time);
+    osc.stop(time + 0.65);
+  }
+  playLapEffect() {
+    this.init();
+    if (!this.ctx || this.isMuted || !this.masterGain) return;
+    const time = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(440, time);
+    osc.frequency.exponentialRampToValueAtTime(880, time + 0.5);
+    gain.gain.setValueAtTime(0.02, time);
+    gain.gain.exponentialRampToValueAtTime(1e-3, time + 0.5);
+    osc.connect(gain);
+    gain.connect(this.masterGain);
+    osc.start(time);
+    osc.stop(time + 0.55);
+  }
+}
+const audio = new SynthAudioEngine();
+function SynthwaveGame() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [countdown, setCountdown] = useState(null);
+  const [frameTick, setFrameTick] = useState(0);
+  const [isAudioMuted, setIsAudioMuted] = useState(false);
+  const lastTimeRef = useRef(performance.now());
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [hp, setHp] = useState(50);
+  const [lap, setLap] = useState(1);
+  const [velocity, setVelocity] = useState(156);
+  const [score, setScore] = useState(64);
+  const [difficulty, setDifficulty] = useState("easy");
+  const [permanentSpeedBonus, setPermanentSpeedBonus] = useState(0);
+  const [patternIndex, setPatternIndex] = useState(0);
+  const [warpIntensity, setWarpIntensity] = useState(0);
+  const [titleAnimationKey, setTitleAnimationKey] = useState(0);
+  const [shakeIntensity, setShakeIntensity] = useState(0);
+  const [glitchActive, setGlitchActive] = useState(false);
+  const [glitchOffset, setGlitchOffset] = useState({ x: 0, y: 0 });
+  const [explosions, setExplosions] = useState([]);
+  const [fireworks, setFireworks] = useState([]);
+  const [launchedEnemies, setLaunchedEnemies] = useState([]);
+  const [playerPos, setPlayerPos] = useState({ x: 0, y: 0.85 });
+  const [playerTilt, setPlayerTilt] = useState(0);
+  const keysPressedRef = useRef({});
+  const [infinityTextOpacity, setInfinityTextOpacity] = useState(1);
+  const [lapProgress, setLapProgress] = useState(0.45);
+  const itemsRef = useRef([
+    { id: 1, type: "diamond", lane: 1, z: 0.6 },
+    { id: 2, type: "obstacle", lane: -1, z: 0.2 }
+  ]);
+  const nextItemId = useRef(3);
+  const spawnTimer = useRef(0);
+  const prevPatternIndexRef = useRef(patternIndex);
+  const triggerCyberFireworks = () => {
+    const neonColors = ["#ff007f", "#00ffff", "#39ff14", "#ffff00", "#ff00ff", "#ff3300", "#00ffcc"];
+    const newParticles = [];
+    const centers = [
+      { x: 200, y: 100 },
+      { x: 400, y: 80 },
+      { x: 600, y: 110 },
+      { x: 400, y: 140 }
+    ];
+    centers.forEach((center, burstIdx) => {
+      const count = 35;
+      for (let i = 0; i < count; i++) {
+        const angle = (i * (360 / count) + Math.random() * 15) * (Math.PI / 180);
+        const speed = 120 + Math.random() * 220;
+        const maxLife = 0.8 + Math.random() * 0.6;
+        newParticles.push({
+          id: Math.random() + i + burstIdx * 1e3,
+          x: center.x,
+          y: center.y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          color: neonColors[(burstIdx + i) % neonColors.length],
+          size: 3 + Math.floor(Math.random() * 4),
+          alpha: 1,
+          life: maxLife,
+          maxLife
+        });
+      }
+    });
+    setFireworks((prev) => [...prev, ...newParticles]);
+  };
+  useEffect(() => {
+    if (prevPatternIndexRef.current !== patternIndex) {
+      setWarpIntensity(1);
+      setTitleAnimationKey((k) => k + 1);
+      triggerCyberFireworks();
+      prevPatternIndexRef.current = patternIndex;
+    }
+    audio.setPatternIndex(patternIndex);
+  }, [patternIndex]);
+  useEffect(() => {
+    if (isPlaying && !isGameOver && !isAudioMuted) {
+      audio.startBGM();
+      audio.startEngine();
+    } else {
+      audio.stopBGM();
+      audio.stopEngine();
+    }
+    return () => {
+      audio.stopBGM();
+      audio.stopEngine();
+    };
+  }, [isPlaying, isGameOver, isAudioMuted, patternIndex]);
+  useEffect(() => {
+    if (countdown === null) return;
+    if (countdown === 0) {
+      setCountdown(null);
+      setIsPlaying(true);
+      audio.playLapEffect();
+      return;
+    }
+    const timer = setTimeout(() => {
+      setCountdown(countdown - 1);
+    }, 1e3);
+    return () => clearTimeout(timer);
+  }, [countdown]);
+  const handleStartGame = () => {
+    audio.init();
+    setPatternIndex(0);
+    audio.setPatternIndex(0);
+    setHasStarted(true);
+    setIsGameOver(false);
+    setHp(50);
+    setScore(64);
+    setLap(1);
+    setPermanentSpeedBonus(0);
+    setPlayerPos({ x: 0, y: 0.85 });
+    setPlayerTilt(0);
+    itemsRef.current = [
+      { id: 1, type: "diamond", lane: 1, z: 0.6 },
+      { id: 2, type: "obstacle", lane: -1, z: 0.2 }
+    ];
+    setExplosions([]);
+    setLaunchedEnemies([]);
+    setCountdown(3);
+  };
+  const toggleMute = () => {
+    const nextMute = !isAudioMuted;
+    setIsAudioMuted(nextMute);
+    audio.setMute(nextMute);
+  };
+  useEffect(() => {
+    if (!isPlaying || isGameOver) return;
+    lastTimeRef.current = performance.now();
+    let frameId;
+    const tick = (now) => {
+      const delta = Math.min((now - lastTimeRef.current) / 1e3, 0.1);
+      lastTimeRef.current = now;
+      setVelocity((v) => {
+        const base = (difficulty === "easy" ? 150 : 210) + permanentSpeedBonus + patternIndex * 15;
+        const noise = Math.sin(now / 200) * 4;
+        const nextV = v > base + 30 ? Math.floor(v - delta * 25 + noise) : Math.floor(base + noise);
+        audio.updateEnginePitch(nextV);
+        return nextV;
+      });
+      setWarpIntensity((prev) => Math.max(0, prev - delta * 1.4));
+      setInfinityTextOpacity((prev) => {
+        if (prev > 0.3) return prev - delta * 0.15;
+        return 0.3 + Math.sin(now / 400) * 0.1;
+      });
+      setShakeIntensity((prev) => Math.max(0, prev - delta * 2.5));
+      if (Math.random() < 0.3) {
+        setGlitchOffset({
+          x: (Math.random() - 0.5) * 15,
+          y: (Math.random() - 0.5) * 10
+        });
+      }
+      setLaunchedEnemies(
+        (prev) => prev.map((enemy) => {
+          const nextProgress = enemy.progress + delta * 1.5;
+          const currentX = enemy.initialX + enemy.vx * enemy.progress * width;
+          const currentY = enemy.initialY + enemy.vy * enemy.progress * height + 0.5 * 800 * enemy.progress * enemy.progress;
+          const updatedTrail = [...enemy.trail, { x: currentX, y: currentY }].slice(-6);
+          return {
+            ...enemy,
+            progress: nextProgress,
+            rotation: enemy.rotation + enemy.vRot * delta,
+            trail: updatedTrail
+          };
+        }).filter((enemy) => enemy.progress < 1)
+      );
+      setExplosions(
+        (prev) => prev.map((exp) => ({ ...exp, progress: exp.progress + delta * 2 })).filter((exp) => exp.progress < 1)
+      );
+      setFireworks(
+        (prev) => prev.map((p) => {
+          const nextLife = p.life - delta;
+          return {
+            ...p,
+            x: p.x + p.vx * delta,
+            y: p.y + p.vy * delta + 30 * delta,
+            // add a slight cyber gravity look
+            life: nextLife,
+            alpha: Math.max(0, nextLife / p.maxLife)
+          };
+        }).filter((p) => p.life > 0)
+      );
+      setLapProgress((p) => {
+        const nextP = (p + delta * 0.06) % 1;
+        if (p > 0.94 && nextP < 0.06) {
+          setLap((currentLap) => {
+            const nextLap = currentLap + 1;
+            setPatternIndex((currentIndex) => (currentIndex + 1) % 10);
+            return nextLap;
+          });
+        }
+        return nextP;
+      });
+      let dx = 0;
+      if (keysPressedRef.current["ArrowLeft"] || keysPressedRef.current["a"] || keysPressedRef.current["A"] || keysPressedRef.current["BtnLeft"]) dx -= 1;
+      if (keysPressedRef.current["ArrowRight"] || keysPressedRef.current["d"] || keysPressedRef.current["D"] || keysPressedRef.current["BtnRight"]) dx += 1;
+      setPlayerPos((prev) => {
+        const moveSpeedX = 2.5;
+        const nextX = Math.max(-1.5, Math.min(1.5, prev.x + dx * moveSpeedX * delta));
+        return { x: nextX, y: 0.85 };
+      });
+      setPlayerTilt((prev) => {
+        const targetTilt = dx * 15;
+        return prev + (targetTilt - prev) * (1 - Math.exp(-12 * delta));
+      });
+      let triggeredGameOver = false;
+      itemsRef.current = itemsRef.current.map((item) => ({ ...item, z: item.z + delta * (0.4 + patternIndex * 0.03) })).filter((item) => {
+        if (Math.abs(item.z - playerPos.y) < 0.06) {
+          if (Math.abs(item.lane - playerPos.x) < 0.4) {
+            if (item.type === "diamond") {
+              setScore((s) => s + 10);
+              setHp(Math.min(100, hp + 20));
+              audio.playPickupChime();
+              const cx = projectX(item.lane, item.z);
+              const cy = projectY(item.z);
+              setExplosions((prev) => [
+                ...prev,
+                {
+                  id: Math.random(),
+                  x: cx,
+                  y: cy,
+                  colors: ["#22c55e", "#4ade80", "#86efac", "#ffffff"],
+                  maxRadius: 300,
+                  progress: 0
+                }
+              ]);
+              setShakeIntensity(0.5);
+            } else {
+              const nextHp = Math.max(0, hp - 15);
+              setHp(nextHp);
+              audio.playCollisionExplosion();
+              const cx = projectX(item.lane, item.z);
+              const cy = projectY(item.z);
+              if (nextHp <= 0) {
+                triggeredGameOver = true;
+                const playerX = projectX(playerPos.x, playerPos.y);
+                const playerY = projectY(playerPos.y);
+                setExplosions((prev) => [
+                  ...prev,
+                  {
+                    id: Math.random(),
+                    x: playerX,
+                    y: playerY,
+                    colors: [MUSIC_PATTERNS[patternIndex].sunColor, "#00ffff", "#eab308", "#ffffff"],
+                    maxRadius: 400,
+                    progress: 0
+                  }
+                ]);
+                setLaunchedEnemies((prev) => [
+                  ...prev,
+                  ...Array.from({ length: 12 }).map((_, i) => ({
+                    id: Math.random(),
+                    lane: playerPos.x,
+                    initialX: playerX,
+                    initialY: playerY,
+                    vx: (Math.random() - 0.5) * 3,
+                    vy: -1.5 - Math.random() * 2,
+                    rotation: Math.random() * 360,
+                    vRot: (Math.random() - 0.5) * 1500,
+                    scale: 0.8,
+                    progress: 0,
+                    trail: [{ x: playerX, y: playerY }]
+                  }))
+                ]);
+                setShakeIntensity(3);
+                setGlitchActive(true);
+                setTimeout(() => setGlitchActive(false), 600);
+                setIsGameOver(true);
+                setIsPlaying(false);
+              } else {
+                setPermanentSpeedBonus((b) => b + 50);
+                setVelocity((v) => v + 50);
+                setShakeIntensity(1.6);
+                setGlitchActive(true);
+                setTimeout(() => setGlitchActive(false), 400);
+                const launchLeft = Math.random() > 0.5;
+                setLaunchedEnemies((prev) => [
+                  ...prev,
+                  {
+                    id: Math.random(),
+                    lane: item.lane,
+                    initialX: cx,
+                    initialY: cy,
+                    vx: launchLeft ? -1.4 : 1.4,
+                    vy: -1.2,
+                    rotation: 0,
+                    vRot: (Math.random() > 0.5 ? 720 : -720) * (1.2 + Math.random()),
+                    scale: 1,
+                    progress: 0,
+                    trail: [{ x: cx, y: cy }]
+                  }
+                ]);
+                setExplosions((prev) => [
+                  ...prev,
+                  {
+                    id: Math.random(),
+                    x: cx,
+                    y: cy,
+                    colors: [MUSIC_PATTERNS[patternIndex].sunColor, "#06b6d4", "#eab308", "#ffffff"],
+                    maxRadius: 260,
+                    progress: 0
+                  }
+                ]);
+              }
+            }
+            return false;
+          }
+        }
+        return item.z < 1;
+      });
+      if (!triggeredGameOver) {
+        spawnTimer.current += delta;
+        const maxSpawnInterval = Math.max(0.6, 1.5 - patternIndex * 0.08);
+        if (spawnTimer.current > maxSpawnInterval) {
+          spawnTimer.current = 0;
+          const lanes = [-1, 0, 1];
+          const randomLane = lanes[Math.floor(Math.random() * lanes.length)];
+          const randomType = Math.random() > 0.45 ? "diamond" : "obstacle";
+          itemsRef.current.push({
+            id: nextItemId.current++,
+            type: randomType,
+            lane: randomLane,
+            z: 0
+          });
+        }
+      }
+      setFrameTick((t) => t + 1);
+      frameId = requestAnimationFrame(tick);
+    };
+    frameId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frameId);
+  }, [isPlaying, playerPos, difficulty, permanentSpeedBonus, hp, isGameOver, patternIndex]);
+  useEffect(() => {
+    if (!isGameOver) return;
+    let animId;
+    let lastTime = performance.now();
+    const updateExplosionsOnly = (now) => {
+      const delta = Math.min((now - lastTime) / 1e3, 0.1);
+      lastTime = now;
+      setExplosions(
+        (prev) => prev.map((exp) => ({ ...exp, progress: exp.progress + delta * 1.5 })).filter((exp) => exp.progress < 1)
+      );
+      setFireworks(
+        (prev) => prev.map((p) => {
+          const nextLife = p.life - delta;
+          return {
+            ...p,
+            x: p.x + p.vx * delta,
+            y: p.y + p.vy * delta + 30 * delta,
+            life: nextLife,
+            alpha: Math.max(0, nextLife / p.maxLife)
+          };
+        }).filter((p) => p.life > 0)
+      );
+      setLaunchedEnemies(
+        (prev) => prev.map((enemy) => {
+          const nextProgress = enemy.progress + delta * 1.2;
+          const currentX = enemy.initialX + enemy.vx * enemy.progress * width;
+          const currentY = enemy.initialY + enemy.vy * enemy.progress * height + 0.5 * 800 * enemy.progress * enemy.progress;
+          const updatedTrail = [...enemy.trail, { x: currentX, y: currentY }].slice(-6);
+          return {
+            ...enemy,
+            progress: nextProgress,
+            trail: updatedTrail
+          };
+        }).filter((enemy) => enemy.progress < 1)
+      );
+      setFrameTick((t) => t + 1);
+      animId = requestAnimationFrame(updateExplosionsOnly);
+    };
+    animId = requestAnimationFrame(updateExplosionsOnly);
+    return () => cancelAnimationFrame(animId);
+  }, [isGameOver]);
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      keysPressedRef.current[e.key] = true;
+    };
+    const handleKeyUp = (e) => {
+      keysPressedRef.current[e.key] = false;
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, []);
+  const handleDifficultyChange = (e) => {
+    const val = e.target.value;
+    setDifficulty(val);
+    setPermanentSpeedBonus(0);
+    if (val === "hard") {
+      setHp(40);
+      setPatternIndex(4);
+    } else {
+      setHp(50);
+      setPatternIndex(0);
+    }
+  };
+  const width = 800;
+  const height = width * 0.52;
+  const shakeX = shakeIntensity > 0 ? (Math.random() - 0.5) * shakeIntensity * 18 : 0;
+  const shakeY = shakeIntensity > 0 ? (Math.random() - 0.5) * shakeIntensity * 18 : 0;
+  const stars = Array.from({ length: 24 }).map((_, i) => {
+    const seed = i * 113.7;
+    const x = seed % width;
+    const speed = 2 + seed % 4;
+    const currX = (x - frameTick * speed) % (width + 40);
+    const finalX = currX < -20 ? currX + width + 40 : currX;
+    const y = seed * 0.7 % (height * 0.32);
+    return { id: i, x: finalX, y, size: 1 + speed % 2 };
+  });
+  const projectX = (lane, z) => {
+    const horizonX = width / 2;
+    const perspectiveFactor = z;
+    const laneWidthAtHorizon = 30;
+    const laneWidthAtBottom = 220;
+    const currentLaneWidth = laneWidthAtHorizon + (laneWidthAtBottom - laneWidthAtHorizon) * perspectiveFactor;
+    return horizonX + lane * currentLaneWidth;
+  };
+  const projectY = (z) => {
+    const horizonY = height * 0.35;
+    const totalHeight = height - horizonY;
+    return horizonY + z * totalHeight;
+  };
+  const currentPattern = MUSIC_PATTERNS[patternIndex];
+  return /* @__PURE__ */ jsxs("div", { dir: DIR, lang: LANG, className: "w-full bg-card text-foreground font-sans select-none overflow-hidden", children: [
+    /* @__PURE__ */ jsx("div", { className: "bg-black/80 px-4 py-2 border-b border-border overflow-x-auto flex items-center gap-1.5 scrollbar-none", children: MUSIC_PATTERNS.map((p, idx) => {
+      const isActive = idx === patternIndex;
+      return /* @__PURE__ */ jsxs(
+        "button",
+        {
+          onClick: () => {
+            audio.init();
+            setPatternIndex(idx);
+            if (!isPlaying && !isGameOver) setIsPlaying(true);
+          },
+          className: `px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 ${isActive ? "text-white font-bold scale-105 shadow-md" : "bg-muted text-muted-foreground hover:bg-zinc-800"}`,
+          style: isActive ? { backgroundColor: p.sunColor, textShadow: "0 1px 2px rgba(0,0,0,0.6)" } : {},
+          children: [
+            idx + 1,
+            ": ",
+            p.name
+          ]
+        },
+        idx
+      );
+    }) }),
+    /* @__PURE__ */ jsxs("div", { className: "relative w-full overflow-hidden border-b border-border bg-[#0d0714]", children: [
+      /* @__PURE__ */ jsxs("div", { className: "absolute top-0 end-0 p-3 z-10 flex items-center gap-2 justify-end pointer-events-none", children: [
+        /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: toggleMute,
+            className: "w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors bg-black/60 hover:bg-black/80 text-white focus:outline-none pointer-events-auto",
+            "aria-label": isAudioMuted ? "サウンドを有効化" : "サウンドをミュート",
+            children: /* @__PURE__ */ jsx("span", { className: "material-icons !text-base", children: isAudioMuted ? "volume_off" : "volume_up" })
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: () => {
+              audio.init();
+              if (!isGameOver) setIsPlaying(!isPlaying);
+            },
+            disabled: isGameOver,
+            className: "w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors shadow-none bg-black/60 hover:bg-black/80 text-white focus:outline-none pointer-events-auto disabled:opacity-40",
+            "aria-label": isPlaying ? "アニメーションを一時停止" : "アニメーションを再生",
+            children: /* @__PURE__ */ jsx("span", { className: "material-icons !text-base", children: isPlaying ? "pause" : "play_arrow" })
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "absolute top-0 start-0 w-full p-4 flex items-center justify-between pointer-events-none z-10", children: [
+        /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-1.5 bg-black/50 backdrop-blur-md p-3.5 rounded-xl border border-cyan-500/30 min-w-[160px]", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-xs font-bold tracking-wider", style: { color: currentPattern.sunColor }, children: iso(`LAP ${lap}`) }),
+            /* @__PURE__ */ jsx("div", { className: "flex items-end gap-[2px] h-[16px] px-1", children: [...Array(10)].map((_, i) => {
+              const factor = (frameTick * 2.5 + i * 4) % 9 / 8;
+              const randomHeight = isPlaying && !isGameOver ? 4 + Math.sin(frameTick * 0.4 + i * 1.5) * 10 + factor * 4 : 3;
+              return /* @__PURE__ */ jsx(
+                "div",
+                {
+                  className: "w-[2px] rounded-t-sm transition-all duration-75",
+                  style: {
+                    height: `${Math.max(2, Math.min(16, randomHeight))}px`,
+                    backgroundColor: currentPattern.sunColor,
+                    boxShadow: `0 0 6px ${currentPattern.sunColor}`
+                  }
+                },
+                i
+              );
+            }) })
+          ] }),
+          /* @__PURE__ */ jsx(
+            "div",
+            {
+              className: "text-[11px] font-bold tracking-wide uppercase truncate max-w-[140px] text-white animate-[neonSlideIn_0.4s_ease-out_forwards]",
+              style: {
+                textShadow: `0 0 4px ${currentPattern.sunColor}, 0 0 10px ${currentPattern.sunColor}`
+              },
+              children: currentPattern.name
+            },
+            titleAnimationKey
+          )
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex-1 max-w-sm mx-6 bg-black/40 backdrop-blur-sm p-3 rounded-xl border border-pink-500/30 invisible sm:visible", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex justify-between items-center mb-1", children: [
+            /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1 text-pink-500", children: [
+              /* @__PURE__ */ jsx("span", { className: "material-icons !text-sm", children: "favorite" }),
+              /* @__PURE__ */ jsx("span", { className: "text-[11px] font-medium tracking-wider text-pink-400", children: "SHIELD INTEGRITY" })
+            ] }),
+            /* @__PURE__ */ jsx("span", { className: "text-xs font-mono font-medium text-pink-400", children: iso(`${hp}%`) })
+          ] }),
+          /* @__PURE__ */ jsx("div", { className: "w-full bg-zinc-900 rounded-full h-2 overflow-hidden border border-pink-900/40", children: /* @__PURE__ */ jsx(
+            "div",
+            {
+              className: "h-full transition-all duration-300 shadow-[0_0_10px_currentColor]",
+              style: { width: `${hp}%`, backgroundColor: currentPattern.sunColor }
+            }
+          ) })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs(
+        "svg",
+        {
+          role: "img",
+          "aria-label": "3D Synthwave Cyberpunk Racing Game Simulation Viewport",
+          viewBox: `0 0 ${width} ${height}`,
+          className: "w-full h-auto block transition-transform duration-75",
+          style: {
+            transform: `translate(${shakeX}px, ${shakeY}px) scale(${1 + warpIntensity * 0.08})`,
+            filter: glitchActive || warpIntensity > 0 ? `hue-rotate(${glitchOffset.x * 4 + warpIntensity * 45}deg) contrast(${1 + warpIntensity * 0.4}) saturate(${1 + warpIntensity * 1.5})` : "none"
+          },
+          children: [
+            /* @__PURE__ */ jsxs("defs", { children: [
+              /* @__PURE__ */ jsxs("linearGradient", { id: "skyGrad", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+                /* @__PURE__ */ jsx("stop", { offset: "0%", stopColor: currentPattern.skyGradTop }),
+                /* @__PURE__ */ jsx("stop", { offset: "60%", stopColor: currentPattern.skyGradMid }),
+                /* @__PURE__ */ jsx("stop", { offset: "100%", stopColor: currentPattern.skyGradBottom })
+              ] }),
+              /* @__PURE__ */ jsxs("linearGradient", { id: "sunGrad", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+                /* @__PURE__ */ jsx("stop", { offset: "0%", stopColor: currentPattern.sunColor }),
+                /* @__PURE__ */ jsx("stop", { offset: "50%", stopColor: "#ff5500" }),
+                /* @__PURE__ */ jsx("stop", { offset: "100%", stopColor: "#ffcc00" })
+              ] }),
+              /* @__PURE__ */ jsxs("linearGradient", { id: "roadGrad", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+                /* @__PURE__ */ jsx("stop", { offset: "0%", stopColor: "#120621" }),
+                /* @__PURE__ */ jsx("stop", { offset: "100%", stopColor: "#05010a" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsx("rect", { width, height: height * 0.35, fill: "url(#skyGrad)", className: "transition-all duration-300" }),
+            warpIntensity > 0 && /* @__PURE__ */ jsxs("g", { opacity: warpIntensity, children: [
+              Array.from({ length: 45 }).map((_, i) => {
+                const angle = i * (360 / 45) * (Math.PI / 180);
+                const horizonX = width / 2;
+                const horizonY = height * 0.35;
+                const lengthStart = 10 + i % 5 * 20 + (1 - warpIntensity) * 400;
+                const lengthEnd = lengthStart + 120 + warpIntensity * 280;
+                const x1 = horizonX + Math.cos(angle) * lengthStart;
+                const y1 = horizonY + Math.sin(angle) * lengthStart * 0.6;
+                const x2 = horizonX + Math.cos(angle) * lengthEnd;
+                const y2 = horizonY + Math.sin(angle) * lengthEnd * 0.6;
+                const neonColors = ["#00ffff", "#ff00ff", "#39ff14", "#ffff00", "#ff007f"];
+                const color = neonColors[i % neonColors.length];
+                return /* @__PURE__ */ jsx(
+                  "line",
+                  {
+                    x1,
+                    y1,
+                    x2,
+                    y2,
+                    stroke: color,
+                    strokeWidth: 2 + i % 3 * warpIntensity * 3,
+                    strokeLinecap: "round",
+                    opacity: warpIntensity,
+                    className: "drop-shadow-[0_0_8px_currentColor]"
+                  },
+                  `warp-star-${i}`
+                );
+              }),
+              Array.from({ length: 10 }).map((_, i) => {
+                const mx = width / 9 * i;
+                const my = height * 0.2 + i * 15 % (height * 0.7);
+                return /* @__PURE__ */ jsxs(
+                  "text",
+                  {
+                    x: mx,
+                    y: my,
+                    fill: "#39ff14",
+                    fontSize: 10 + i % 3 * 4,
+                    fontFamily: "monospace",
+                    opacity: warpIntensity * 0.8,
+                    textAnchor: "middle",
+                    children: [
+                      `0110100101110100`[i % 16],
+                      " SYSTEM_WARP_CONNECTED_",
+                      [patternIndex]
+                    ]
+                  },
+                  `matrix-code-${i}`
+                );
+              })
+            ] }),
+            /* @__PURE__ */ jsxs("g", { transform: `translate(${width / 2}, ${height * 0.35})`, children: [
+              /* @__PURE__ */ jsx("circle", { cx: "0", cy: "-20", r: "55", fill: "url(#sunGrad)", className: "transition-all duration-300" }),
+              /* @__PURE__ */ jsx("rect", { x: "-60", y: "-18", width: "120", height: "2", fill: currentPattern.skyGradTop, opacity: "0.4" }),
+              /* @__PURE__ */ jsx("rect", { x: "-60", y: "-10", width: "120", height: "3", fill: currentPattern.skyGradTop, opacity: "0.6" }),
+              /* @__PURE__ */ jsx("rect", { x: "-60", y: "-2", width: "120", height: "4", fill: currentPattern.skyGradMid }),
+              /* @__PURE__ */ jsx("rect", { x: "-60", y: "4", width: "120", height: "6", fill: currentPattern.skyGradBottom })
+            ] }),
+            /* @__PURE__ */ jsx("g", { fill: "#ffffff", children: stars.map((star) => /* @__PURE__ */ jsx("circle", { cx: star.x, cy: star.y, r: star.size, opacity: 0.3 + star.size * 0.2 }, star.id)) }),
+            /* @__PURE__ */ jsxs("g", { opacity: "0.35", children: [
+              Array.from({ length: 16 }).map((_, i) => {
+                const xPos = width / 15 * i;
+                return /* @__PURE__ */ jsx(
+                  "line",
+                  {
+                    x1: xPos,
+                    y1: height * 0.35,
+                    x2: xPos + (xPos - width / 2) * 1.5,
+                    y2: height,
+                    stroke: currentPattern.sunColor,
+                    strokeWidth: "1",
+                    className: "transition-colors duration-300"
+                  },
+                  `grid-v-${i}`
+                );
+              }),
+              Array.from({ length: 7 }).map((_, i) => {
+                const baseProgress = i / 6;
+                const scrolledProgress = (baseProgress * 6 + frameTick * (0.16 + patternIndex * 0.015)) % 6 / 6;
+                const yPos = height * 0.35 + scrolledProgress * (height * 0.65);
+                return /* @__PURE__ */ jsx(
+                  "line",
+                  {
+                    x1: "0",
+                    y1: yPos,
+                    x2: width,
+                    y2: yPos,
+                    stroke: currentPattern.sunColor,
+                    strokeWidth: "1.2",
+                    className: "transition-colors duration-300"
+                  },
+                  `grid-h-${i}`
+                );
+              })
+            ] }),
+            /* @__PURE__ */ jsx("line", { x1: "0", y1: height * 0.35, x2: width, y2: height * 0.35, stroke: currentPattern.sunColor, strokeWidth: "2", opacity: "0.8" }),
+            /* @__PURE__ */ jsx(
+              "polygon",
+              {
+                points: `${width / 2 - 45},${height * 0.35} ${width / 2 + 45},${height * 0.35} ${width / 2 + 320},${height} ${width / 2 - 320},${height}`,
+                fill: "url(#roadGrad)"
+              }
+            ),
+            /* @__PURE__ */ jsx("line", { x1: projectX(-1.5, 0), y1: projectY(0), x2: projectX(-1.5, 1), y2: projectY(1), stroke: "#00ffff", strokeWidth: "4", opacity: "0.9" }),
+            /* @__PURE__ */ jsx("line", { x1: projectX(1.5, 0), y1: projectY(0), x2: projectX(1.5, 1), y2: projectY(1), stroke: "#00ffff", strokeWidth: "4", opacity: "0.9" }),
+            /* @__PURE__ */ jsx("g", { stroke: "#ffffff", strokeWidth: "1.5", strokeDasharray: "8,12", opacity: "0.4", children: Array.from({ length: 6 }).map((_, i) => {
+              const baseZ = i / 5;
+              const scrolledZ = (baseZ * 5 + frameTick * 0.14) % 5 / 5;
+              const nextZ = Math.min(1, scrolledZ + 0.08);
+              return /* @__PURE__ */ jsxs("g", { children: [
+                /* @__PURE__ */ jsx("line", { x1: projectX(-0.5, scrolledZ), y1: projectY(scrolledZ), x2: projectX(-0.5, nextZ), y2: projectY(nextZ) }),
+                /* @__PURE__ */ jsx("line", { x1: projectX(0.5, scrolledZ), y1: projectY(scrolledZ), x2: projectX(0.5, nextZ), y2: projectY(nextZ) })
+              ] }, `dash-${i}`);
+            }) }),
+            launchedEnemies.map((enemy) => {
+              const currentX = enemy.initialX + enemy.vx * enemy.progress * width;
+              const currentY = enemy.initialY + enemy.vy * enemy.progress * height + 0.5 * 800 * enemy.progress * enemy.progress;
+              const radius = 20 * (1.5 - enemy.progress * 0.5);
+              const w = radius * 2.5 * (enemy.scale || 1);
+              const h = radius * 1.4 * (enemy.scale || 1);
+              return /* @__PURE__ */ jsxs("g", { children: [
+                enemy.trail.length > 1 && /* @__PURE__ */ jsx(
+                  "path",
+                  {
+                    d: `M ${enemy.trail.map((pt) => `${pt.x},${pt.y}`).join(" L ")}`,
+                    fill: "none",
+                    stroke: currentPattern.sunColor,
+                    strokeWidth: 8 * (1 - enemy.progress),
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    opacity: 0.8 * (1 - enemy.progress)
+                  }
+                ),
+                /* @__PURE__ */ jsx("g", { transform: `translate(${currentX}, ${currentY}) rotate(${enemy.rotation})`, children: /* @__PURE__ */ jsx(
+                  "polygon",
+                  {
+                    points: `${-w / 2},${h / 2} ${-w / 3},${-h / 2} ${w / 3},${-h / 2} ${w / 2},${h / 2}`,
+                    fill: isGameOver ? "#00ffff" : currentPattern.sunColor,
+                    stroke: "#ffffff",
+                    strokeWidth: "2"
+                  }
+                ) })
+              ] }, enemy.id);
+            }),
+            !isGameOver && itemsRef.current.map((item) => {
+              const cx = projectX(item.lane, item.z);
+              const cy = projectY(item.z);
+              const radius = 4 + item.z * 16;
+              if (item.type === "diamond") {
+                return /* @__PURE__ */ jsx("g", { opacity: item.z > 0.1 ? 1 : item.z * 10, children: /* @__PURE__ */ jsx(
+                  "polygon",
+                  {
+                    points: `${cx},${cy - radius} ${cx + radius * 0.7},${cy} ${cx},${cy + radius} ${cx - radius * 0.7},${cy}`,
+                    fill: "#22d3ee",
+                    stroke: "#ffffff",
+                    strokeWidth: "1.5",
+                    className: "drop-shadow-[0_0_8px_#06b6d4]"
+                  }
+                ) }, item.id);
+              } else {
+                const w = radius * 2.5;
+                const h = radius * 1.5;
+                return /* @__PURE__ */ jsxs("g", { opacity: item.z > 0.1 ? 1 : item.z * 10, children: [
+                  /* @__PURE__ */ jsx("ellipse", { cx, cy: cy + h / 3, rx: w * 0.6, ry: h * 0.4, fill: currentPattern.sunColor, opacity: "0.3", filter: "blur(4px)" }),
+                  /* @__PURE__ */ jsx(
+                    "polygon",
+                    {
+                      points: `${cx - w / 2},${cy + h / 2} ${cx - w / 2.5},${cy - h / 4} ${cx - w / 4},${cy - h / 2} ${cx},${cy - h / 3} ${cx + w / 4},${cy - h / 2} ${cx + w / 2.5},${cy - h / 4} ${cx + w / 2},${cy + h / 2} ${cx},${cy + h / 4}`,
+                      fill: "#10000a",
+                      stroke: currentPattern.sunColor,
+                      strokeWidth: "1.8"
+                    }
+                  ),
+                  /* @__PURE__ */ jsx("circle", { cx, cy: cy - h / 12, r: Math.max(2, radius * 0.35), fill: "#ffffff" })
+                ] }, item.id);
+              }
+            }),
+            !isGameOver && (() => {
+              const carX = projectX(playerPos.x, playerPos.y);
+              const carY = projectY(playerPos.y);
+              const carW = 54;
+              const carH = 34;
+              return /* @__PURE__ */ jsxs("g", { transform: `translate(${carX}, ${carY}) rotate(${playerTilt}) translate(${-carX}, ${-carY})`, children: [
+                /* @__PURE__ */ jsxs("g", { opacity: isPlaying ? 0.85 : 0.3, children: [
+                  /* @__PURE__ */ jsx("path", { d: `M ${carX - carW * 0.5} ${carY + carH * 0.1} L ${carX - carW * 1.6} ${carY + carH + 45} L ${carX + carW * 1.6} ${carY + carH + 45} Z`, fill: "url(#sunGrad)", opacity: 0.3, filter: "blur(6px)" }),
+                  /* @__PURE__ */ jsx("path", { d: `M ${carX - carW * 0.25} ${carY + carH * 0.2} L ${carX - carW * 0.8} ${carY + carH + 35} L ${carX + carW * 0.8} ${carY + carH + 35} Z`, fill: "#00ffff", opacity: 0.6, filter: "blur(2px)" })
+                ] }),
+                /* @__PURE__ */ jsx("ellipse", { cx: carX, cy: carY + 8, rx: carW * 0.9, ry: 12, fill: "none", stroke: "#00ffff", strokeWidth: "3.5", opacity: 0.7 }),
+                /* @__PURE__ */ jsx(
+                  "polygon",
+                  {
+                    points: `${carX - carW * 0.5},${carY + carH * 0.4} ${carX - carW * 0.45},${carY - carH * 0.3} ${carX - carW * 0.15},${carY - carH * 0.6} ${carX + carW * 0.15},${carY - carH * 0.6} ${carX + carW * 0.45},${carY - carH * 0.3} ${carX + carW * 0.5},${carY + carH * 0.4} ${carX},${carY + carH * 0.5}`,
+                    fill: "#0c0714",
+                    stroke: "#00ffff",
+                    strokeWidth: "2.5"
+                  }
+                )
+              ] });
+            })(),
+            explosions.map((exp) => /* @__PURE__ */ jsx("g", { children: exp.colors.map((color, index) => {
+              const r = exp.progress * exp.maxRadius * (1 - index * 0.15);
+              if (r <= 0) return null;
+              return /* @__PURE__ */ jsx(
+                "circle",
+                {
+                  cx: exp.x,
+                  cy: exp.y,
+                  r,
+                  fill: "none",
+                  stroke: color,
+                  strokeWidth: 8 * (1 - exp.progress),
+                  opacity: 0.9 * (1 - exp.progress)
+                },
+                index
+              );
+            }) }, exp.id)),
+            fireworks.map((p) => /* @__PURE__ */ jsx(
+              "rect",
+              {
+                x: p.x - p.size / 2,
+                y: p.y - p.size / 2,
+                width: p.size,
+                height: p.size,
+                fill: p.color,
+                opacity: p.alpha,
+                className: "drop-shadow-[0_0_6px_currentColor]",
+                style: { color: p.color }
+              },
+              p.id
+            ))
+          ]
+        }
+      ),
+      isGameOver && /* @__PURE__ */ jsxs("div", { className: "absolute inset-0 bg-black/85 backdrop-blur-md flex flex-col items-center justify-center z-20", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-4xl font-black text-rose-500 tracking-widest drop-shadow-[0_0_20px_#f43f5e] mb-2", children: "GAME OVER" }),
+        /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground mb-6 font-medium", children: "シールド大破：自機が爆発しました" }),
+        /* @__PURE__ */ jsx(
+          "button",
+          {
+            onClick: handleStartGame,
+            className: "px-8 py-3 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full font-bold text-sm tracking-widest text-white cursor-pointer",
+            children: "リトライ"
+          }
+        )
+      ] }),
+      !hasStarted && !isGameOver && /* @__PURE__ */ jsx("div", { className: "absolute inset-0 bg-black/70 backdrop-blur-xs flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ jsx(
+        "button",
+        {
+          onClick: handleStartGame,
+          className: "px-10 py-4 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full font-bold text-lg tracking-widest text-white cursor-pointer",
+          children: "START"
+        }
+      ) }),
+      countdown !== null && /* @__PURE__ */ jsx("div", { className: "absolute inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-20 pointer-events-none", children: /* @__PURE__ */ jsx("span", { className: "text-6xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_15px_#06b6d4]", children: countdown === 0 ? "GO!" : countdown }) })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-center gap-x-4 sm:gap-x-12 border-b border-border px-5 py-3.5 shrink-0 bg-zinc-950/20", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-0.5 min-w-0 flex-1", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-xs font-medium truncate text-center w-full", style: { color: currentPattern.sunColor }, children: "HP SYSTEM" }),
+        /* @__PURE__ */ jsx("span", { className: "text-sm font-medium text-foreground tabular-nums truncate text-center w-full", children: iso(`${hp}%`) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-xs text-muted-foreground font-medium truncate text-center w-full", children: "LAP SCORE" }),
+        /* @__PURE__ */ jsx("span", { className: "text-sm font-medium text-foreground tabular-nums truncate text-center w-full", children: iso(lap) })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-xs text-cyan-400 font-medium truncate text-center w-full", children: "VELOCITY" }),
+        /* @__PURE__ */ jsxs("span", { className: "text-sm font-medium text-foreground tabular-nums truncate text-center w-full", children: [
+          iso(isGameOver ? 0 : velocity),
+          " km/h"
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800", children: [
+        /* @__PURE__ */ jsx("span", { className: "text-xs text-yellow-400 font-medium truncate text-center w-full", children: "SCORE" }),
+        /* @__PURE__ */ jsx("span", { className: "text-sm font-medium text-foreground tabular-nums truncate text-center w-full", children: iso(score) })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxs("div", { className: "p-5 flex flex-col gap-4 bg-card", children: [
+      /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4", children: [
+        /* @__PURE__ */ jsxs("div", { className: "w-full sm:w-64", children: [
+          /* @__PURE__ */ jsx("label", { className: "block text-sm font-medium text-muted-foreground mb-1.5", children: "SYSTEM PROTOCOL" }),
+          /* @__PURE__ */ jsxs("div", { className: "relative h-9 rounded-lg bg-muted px-3 flex items-center", children: [
+            /* @__PURE__ */ jsx("span", { className: "text-sm font-medium text-foreground", children: difficulty === "easy" ? "通常巡航モード (EASY)" : "高速無限突破モード (HARD)" }),
+            /* @__PURE__ */ jsx("span", { className: "material-icons absolute end-2.5 top-1/2 -translate-y-1/2 pointer-events-none !text-base text-muted-foreground", children: "expand_more" }),
+            /* @__PURE__ */ jsxs(
+              "select",
+              {
+                value: difficulty,
+                onChange: handleDifficultyChange,
+                disabled: isGameOver,
+                className: "absolute inset-x-0 top-1/2 -translate-y-1/2 h-11 w-full opacity-0 cursor-pointer pointer-events-auto disabled:cursor-not-allowed",
+                "aria-label": "システムプロトコル選択",
+                children: [
+                  /* @__PURE__ */ jsx("option", { value: "easy", children: "通常巡航モード (EASY)" }),
+                  /* @__PURE__ */ jsx("option", { value: "hard", children: "高速無限突破モード (HARD)" })
+                ]
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onMouseDown: () => {
+                if (!isGameOver) keysPressedRef.current["BtnLeft"] = true;
+              },
+              onMouseUp: () => {
+                keysPressedRef.current["BtnLeft"] = false;
+              },
+              onMouseLeave: () => {
+                keysPressedRef.current["BtnLeft"] = false;
+              },
+              onTouchStart: (e) => {
+                e.preventDefault();
+                if (!isGameOver) keysPressedRef.current["BtnLeft"] = true;
+              },
+              onTouchEnd: () => {
+                keysPressedRef.current["BtnLeft"] = false;
+              },
+              disabled: isGameOver,
+              className: "w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-zinc-800 text-pink-500 border border-pink-500/20 focus:outline-none transition-transform active:scale-95 disabled:opacity-40",
+              "aria-label": "左移動",
+              children: /* @__PURE__ */ jsx("span", { className: "material-icons !text-lg", children: "arrow_back" })
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onMouseDown: () => {
+                if (!isGameOver) keysPressedRef.current["BtnRight"] = true;
+              },
+              onMouseUp: () => {
+                keysPressedRef.current["BtnRight"] = false;
+              },
+              onMouseLeave: () => {
+                keysPressedRef.current["BtnRight"] = false;
+              },
+              onTouchStart: (e) => {
+                e.preventDefault();
+                if (!isGameOver) keysPressedRef.current["BtnRight"] = true;
+              },
+              onTouchEnd: () => {
+                keysPressedRef.current["BtnRight"] = false;
+              },
+              disabled: isGameOver,
+              className: "w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-zinc-800 text-cyan-400 border border-cyan-500/20 focus:outline-none transition-transform active:scale-95 disabled:opacity-40",
+              "aria-label": "右移動",
+              children: /* @__PURE__ */ jsx("span", { className: "material-icons !text-lg", children: "arrow_forward" })
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsx("div", { className: "text-xs text-muted-foreground font-normal leading-relaxed pt-1 border-t border-border/40", children: "上部のパターンスイッチャーまたはラップクリアで10種のサイバーパンクBGM進行＆ネオン空模様が鮮やかに切り替わります。曲の切り替わり時には、ワープ効果と完全に同期したド派手な「サイバー・ネオン花火演出（カラフルな高輝度ピクセルバースト）」が画面いっぱいに炸裂します！左右矢印キーや画面ボタンで移動し、障害物をハック回避してください。" })
+    ] })
+  ] });
+}
+function App() {
+  return /* @__PURE__ */ jsx(ErrorBoundary, { fallback: /* @__PURE__ */ jsx("div", { className: "p-4 text-error text-sm", children: "システムエラーが発生しました。" }), children: /* @__PURE__ */ jsx(SynthwaveGame, {}) });
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ jsx(React.StrictMode, { children: /* @__PURE__ */ jsx(App, {}) })
+);
+
+</script><style>
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer properties {
+  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *, :before, :after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-ordinal: initial;
+      --tw-slashed-zero: initial;
+      --tw-numeric-figure: initial;
+      --tw-numeric-spacing: initial;
+      --tw-numeric-fraction: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+
+@layer theme {
+  :root, :host {
+    --font-sans: "Google Sans", "Roboto", sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-400: oklch(70.4% .191 22.216);
+    --color-red-500: oklch(63.7% .237 25.331);
+    --color-yellow-400: oklch(85.2% .199 91.936);
+    --color-yellow-500: oklch(79.5% .184 86.047);
+    --color-cyan-400: oklch(78.9% .154 211.53);
+    --color-cyan-500: oklch(71.5% .143 215.221);
+    --color-pink-400: oklch(71.8% .202 349.761);
+    --color-pink-500: oklch(65.6% .241 354.308);
+    --color-pink-900: oklch(40.8% .153 2.432);
+    --color-rose-400: oklch(71.2% .194 13.428);
+    --color-rose-500: oklch(64.5% .246 16.439);
+    --color-zinc-800: oklch(27.4% .006 286.033);
+    --color-zinc-900: oklch(21% .006 285.885);
+    --color-zinc-950: oklch(14.1% .005 285.823);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: .25rem;
+    --container-sm: 24rem;
+    --container-md: 28rem;
+    --text-xs: .75rem;
+    --text-xs--line-height: calc(1 / .75);
+    --text-sm: .875rem;
+    --text-sm--line-height: calc(1.25 / .875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --tracking-tighter: -.05em;
+    --tracking-wide: .025em;
+    --tracking-wider: .05em;
+    --tracking-widest: .1em;
+    --leading-relaxed: 1.625;
+    --radius-sm: .25rem;
+    --radius-lg: .5rem;
+    --radius-xl: .75rem;
+    --ease-out: cubic-bezier(0, 0, .2, 1);
+    --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+    --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+    --animate-bounce: bounce 1s infinite;
+    --blur-xs: 4px;
+    --blur-sm: 8px;
+    --blur-md: 12px;
+    --default-transition-duration: .15s;
+    --default-transition-timing-function: cubic-bezier(.31, .94, .34, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --color-primary: var(--primary, #336ef3);
+    --color-primary-hover: var(--primary-hover, #395fe1);
+    --color-error: var(--brand-red, #ea4335);
+    --color-warning: var(--brand-yellow, #fbbc04);
+    --color-success: var(--brand-green, #34a853);
+    --color-background: var(--surface-container-de-emphasis, #f7f8fa);
+    --color-card: var(--surface-container-de-emphasis, #f7f8fa);
+    --color-card-hover: var(--surface-container-high, #e9ebf0);
+    --color-border: var(--divider, #dcdfe5);
+    --color-input: var(--surface-container, #f0f2f5);
+    --color-secondary: var(--surface-container-high, #e9ebf0);
+    --color-secondary-hover: var(--surface-container-highest, #e1e3e8);
+    --color-accent: var(--surface-container-highest, #e1e3e8);
+    --color-accent-foreground: var(--on-surface-default, #0a0a0a);
+    --color-muted: var(--surface-container, #f0f2f5);
+    --color-muted-foreground: var(--on-surface-de-emphasis, #56595e);
+    --color-foreground: var(--on-surface-default, #0a0a0a);
+    --color-disabled: var(--surface-container, #f0f2f5);
+    --color-disabled-foreground: var(--disabled-foreground, #95989c);
+  }
+}
+
+@layer base {
+  *, :after, :before, ::backdrop {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::file-selector-button {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, :host {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    line-height: 1.5;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+
+  b, strong {
+    font-weight: bolder;
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  sub, sup {
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+  }
+
+  sub {
+    bottom: -.25em;
+  }
+
+  sup {
+    top: -.5em;
+  }
+
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+
+  :-moz-focusring {
+    outline: auto;
+  }
+
+  progress {
+    vertical-align: baseline;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  ol, ul, menu {
+    list-style: none;
+  }
+
+  img, svg, video, canvas, audio, iframe, embed, object {
+    vertical-align: middle;
+    display: block;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button, input, select, optgroup, textarea {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: #0000;
+    border-radius: 0;
+  }
+
+  ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    opacity: 1;
+    background-color: #0000;
+    border-radius: 0;
+  }
+
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+
+  ::placeholder {
+    opacity: 1;
+  }
+
+  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentColor;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      ::placeholder {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  ::-webkit-datetime-edit {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-year-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-month-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-day-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-hour-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-minute-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-second-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-millisecond-field {
+    padding-block: 0;
+  }
+
+  ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  button, input:where([type="button"], [type="reset"], [type="submit"]) {
+    appearance: button;
+  }
+
+  ::file-selector-button {
+    appearance: button;
+  }
+
+  ::-webkit-inner-spin-button {
+    height: auto;
+  }
+
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+
+@layer components;
+
+@layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
+
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .fixed {
+    position: fixed;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .static {
+    position: static;
+  }
+
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+
+  .inset-x-0 {
+    inset-inline: calc(var(--spacing) * 0);
+  }
+
+  .start-0 {
+    inset-inline-start: calc(var(--spacing) * 0);
+  }
+
+  .end-0 {
+    inset-inline-end: calc(var(--spacing) * 0);
+  }
+
+  .end-2 {
+    inset-inline-end: calc(var(--spacing) * 2);
+  }
+
+  .end-2\.5 {
+    inset-inline-end: calc(var(--spacing) * 2.5);
+  }
+
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+
+  .top-1 {
+    top: calc(var(--spacing) * 1);
+  }
+
+  .top-1\/2 {
+    top: 50%;
+  }
+
+  .z-10 {
+    z-index: 10;
+  }
+
+  .z-20 {
+    z-index: 20;
+  }
+
+  .mx-6 {
+    margin-inline: calc(var(--spacing) * 6);
+  }
+
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
+
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
+  }
+
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+
+  .block {
+    display: block;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .table {
+    display: table;
+  }
+
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
+
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
+
+  .h-\[12px\] {
+    height: 12px;
+  }
+
+  .h-\[16px\] {
+    height: 16px;
+  }
+
+  .h-auto {
+    height: auto;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .w-9 {
+    width: calc(var(--spacing) * 9);
+  }
+
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+
+  .w-\[2px\] {
+    width: 2px;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .max-w-\[140px\] {
+    max-width: 140px;
+  }
+
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
+
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
+
+  .min-w-\[160px\] {
+    min-width: 160px;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+
+  .border-collapse {
+    border-collapse: collapse;
+  }
+
+  .-translate-y-1 {
+    --tw-translate-y: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .scale-105 {
+    --tw-scale-x: 105%;
+    --tw-scale-y: 105%;
+    --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+
+  .transform {
+    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  }
+
+  .animate-\[neonSlideIn_0\.4s_ease-out_forwards\] {
+    animation: .4s ease-out forwards neonSlideIn;
+  }
+
+  .animate-bounce {
+    animation: var(--animate-bounce);
+  }
+
+  .animate-ping {
+    animation: var(--animate-ping);
+  }
+
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .resize {
+    resize: both;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .items-end {
+    align-items: flex-end;
+  }
+
+  .items-start {
+    align-items: flex-start;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .gap-0 {
+    gap: calc(var(--spacing) * 0);
+  }
+
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * .5);
+  }
+
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+
+  .gap-\[2px\] {
+    gap: 2px;
+  }
+
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
+
+  .self-end {
+    align-self: flex-end;
+  }
+
+  .truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-visible {
+    overflow: visible;
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .rounded-full {
+    border-radius: 3.40282e38px;
+  }
+
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+
+  .rounded-t-sm {
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+
+  .border-border, .border-border\/40 {
+    border-color: var(--color-border);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-border\/40 {
+      border-color: color-mix(in oklab, var(--color-border) 40%, transparent);
+    }
+  }
+
+  .border-cyan-500 {
+    border-color: var(--color-cyan-500);
+  }
+
+  .border-cyan-500\/20 {
+    border-color: #00b7d733;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-cyan-500\/20 {
+      border-color: color-mix(in oklab, var(--color-cyan-500) 20%, transparent);
+    }
+  }
+
+  .border-cyan-500\/30 {
+    border-color: #00b7d74d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-cyan-500\/30 {
+      border-color: color-mix(in oklab, var(--color-cyan-500) 30%, transparent);
+    }
+  }
+
+  .border-pink-500 {
+    border-color: var(--color-pink-500);
+  }
+
+  .border-pink-500\/20 {
+    border-color: #f6339a33;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-pink-500\/20 {
+      border-color: color-mix(in oklab, var(--color-pink-500) 20%, transparent);
+    }
+  }
+
+  .border-pink-500\/30 {
+    border-color: #f6339a4d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-pink-500\/30 {
+      border-color: color-mix(in oklab, var(--color-pink-500) 30%, transparent);
+    }
+  }
+
+  .border-pink-900 {
+    border-color: var(--color-pink-900);
+  }
+
+  .border-pink-900\/40 {
+    border-color: #86104366;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-pink-900\/40 {
+      border-color: color-mix(in oklab, var(--color-pink-900) 40%, transparent);
+    }
+  }
+
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
+
+  .border-zinc-800 {
+    border-color: var(--color-zinc-800);
+  }
+
+  .bg-\[\#0d0714\] {
+    background-color: #0d0714;
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
+  }
+
+  .bg-black\/40 {
+    background-color: #0006;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/40 {
+      background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+    }
+  }
+
+  .bg-black\/50 {
+    background-color: #00000080;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/50 {
+      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
+    }
+  }
+
+  .bg-black\/60 {
+    background-color: #0009;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/60 {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
+
+  .bg-black\/70 {
+    background-color: #000000b3;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/70 {
+      background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+    }
+  }
+
+  .bg-black\/80 {
+    background-color: #000c;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/80 {
+      background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
+    }
+  }
+
+  .bg-black\/85 {
+    background-color: #000000d9;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-black\/85 {
+      background-color: color-mix(in oklab, var(--color-black) 85%, transparent);
+    }
+  }
+
+  .bg-card {
+    background-color: var(--color-card);
+  }
+
+  .bg-cyan-500 {
+    background-color: var(--color-cyan-500);
+  }
+
+  .bg-muted {
+    background-color: var(--color-muted);
+  }
+
+  .bg-pink-500 {
+    background-color: var(--color-pink-500);
+  }
+
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+
+  .bg-yellow-500 {
+    background-color: var(--color-yellow-500);
+  }
+
+  .bg-zinc-900 {
+    background-color: var(--color-zinc-900);
+  }
+
+  .bg-zinc-950 {
+    background-color: var(--color-zinc-950);
+  }
+
+  .bg-zinc-950\/20 {
+    background-color: #09090b33;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-zinc-950\/20 {
+      background-color: color-mix(in oklab, var(--color-zinc-950) 20%, transparent);
+    }
+  }
+
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+
+  .from-pink-500 {
+    --tw-gradient-from: var(--color-pink-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-cyan-500 {
+    --tw-gradient-to: var(--color-cyan-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .to-rose-400 {
+    --tw-gradient-to: var(--color-rose-400);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+
+  .p-3\.5 {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
+  }
+
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+
+  .pt-1 {
+    padding-top: calc(var(--spacing) * 1);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .\!text-base {
+    font-size: var(--text-base) !important;
+    line-height: var(--tw-leading, var(--text-base--line-height)) !important;
+  }
+
+  .\!text-lg {
+    font-size: var(--text-lg) !important;
+    line-height: var(--tw-leading, var(--text-lg--line-height)) !important;
+  }
+
+  .\!text-sm {
+    font-size: var(--text-sm) !important;
+    line-height: var(--tw-leading, var(--text-sm--line-height)) !important;
+  }
+
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .tracking-tighter {
+    --tw-tracking: var(--tracking-tighter);
+    letter-spacing: var(--tracking-tighter);
+  }
+
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+
+  .text-black {
+    color: var(--color-black);
+  }
+
+  .text-cyan-400 {
+    color: var(--color-cyan-400);
+  }
+
+  .text-error {
+    color: var(--color-error);
+  }
+
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+
+  .text-muted-foreground {
+    color: var(--color-muted-foreground);
+  }
+
+  .text-pink-400 {
+    color: var(--color-pink-400);
+  }
+
+  .text-pink-500 {
+    color: var(--color-pink-500);
+  }
+
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+
+  .text-rose-500 {
+    color: var(--color-rose-500);
+  }
+
+  .text-white {
+    color: var(--color-white);
+  }
+
+  .text-yellow-400 {
+    color: var(--color-yellow-400);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .tabular-nums {
+    --tw-numeric-spacing: tabular-nums;
+    font-variant-numeric: var(--tw-ordinal, ) var(--tw-slashed-zero, ) var(--tw-numeric-figure, ) var(--tw-numeric-spacing, ) var(--tw-numeric-fraction, );
+  }
+
+  .underline {
+    text-decoration-line: underline;
+  }
+
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-\[0_0_10px_currentColor\] {
+    --tw-shadow: 0 0 10px var(--tw-shadow-color, currentColor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, #0000001a), 0 2px 4px -2px var(--tw-shadow-color, #0000001a);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .shadow-none {
+    --tw-shadow: 0 0 #0000;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+
+  .drop-shadow-\[0_0_6px_currentColor\] {
+    --tw-drop-shadow-size: drop-shadow(0 0 6px var(--tw-drop-shadow-color, currentColor));
+    --tw-drop-shadow: var(--tw-drop-shadow-size);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .drop-shadow-\[0_0_8px_\#06b6d4\] {
+    --tw-drop-shadow-size: drop-shadow(0 0 8px var(--tw-drop-shadow-color, #06b6d4));
+    --tw-drop-shadow: var(--tw-drop-shadow-size);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .drop-shadow-\[0_0_8px_currentColor\] {
+    --tw-drop-shadow-size: drop-shadow(0 0 8px var(--tw-drop-shadow-color, currentColor));
+    --tw-drop-shadow: var(--tw-drop-shadow-size);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .drop-shadow-\[0_0_15px_\#06b6d4\] {
+    --tw-drop-shadow-size: drop-shadow(0 0 15px var(--tw-drop-shadow-color, #06b6d4));
+    --tw-drop-shadow: var(--tw-drop-shadow-size);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .drop-shadow-\[0_0_20px_\#f43f5e\] {
+    --tw-drop-shadow-size: drop-shadow(0 0 20px var(--tw-drop-shadow-color, #f43f5e));
+    --tw-drop-shadow: var(--tw-drop-shadow-size);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .filter {
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(var(--blur-md));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .backdrop-blur-sm {
+    --tw-backdrop-blur: blur(var(--blur-sm));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .backdrop-blur-xs {
+    --tw-backdrop-blur: blur(var(--blur-xs));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
+  }
+
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+
+  .duration-75 {
+    --tw-duration: 75ms;
+    transition-duration: 75ms;
+  }
+
+  .duration-150 {
+    --tw-duration: .15s;
+    transition-duration: .15s;
+  }
+
+  .duration-200 {
+    --tw-duration: .2s;
+    transition-duration: .2s;
+  }
+
+  .duration-300 {
+    --tw-duration: .3s;
+    transition-duration: .3s;
+  }
+
+  .duration-1000 {
+    --tw-duration: 1s;
+    transition-duration: 1s;
+  }
+
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-black\/80:hover {
+      background-color: #000c;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-black\/80:hover {
+        background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
+      }
+    }
+
+    .hover\:bg-zinc-800:hover {
+      background-color: var(--color-zinc-800);
+    }
+  }
+
+  .focus\:outline-none:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+
+  .active\:scale-95:active {
+    --tw-scale-x: 95%;
+    --tw-scale-y: 95%;
+    --tw-scale-z: 95%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+
+  .disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+  }
+
+  .disabled\:opacity-40:disabled {
+    opacity: .4;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:visible {
+      visibility: visible;
+    }
+
+    .sm\:w-64 {
+      width: calc(var(--spacing) * 64);
+    }
+
+    .sm\:flex-row {
+      flex-direction: row;
+    }
+
+    .sm\:items-center {
+      align-items: center;
+    }
+
+    .sm\:gap-x-12 {
+      column-gap: calc(var(--spacing) * 12);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-primary: var(--primary, #336ef3);
+    --color-primary-hover: var(--primary-hover, #395fe1);
+    --color-error: var(--brand-red, #ea4335);
+    --color-warning: var(--brand-yellow, #fbbc04);
+    --color-success: var(--brand-green, #34a853);
+    --color-background: var(--surface-container-de-emphasis, #272930);
+    --color-card: var(--surface-container-de-emphasis, #272930);
+    --color-card-hover: var(--surface-container-high, #363840);
+    --color-border: var(--divider, #363840);
+    --color-input: var(--surface-container, #2c2e35);
+    --color-secondary: var(--surface-container-high, #363840);
+    --color-secondary-hover: var(--surface-container-highest, #42444d);
+    --color-accent: var(--surface-container-highest, #42444d);
+    --color-accent-foreground: var(--on-surface-default, #e6e8f0);
+    --color-muted: var(--surface-container, #2c2e35);
+    --color-muted-foreground: var(--on-surface-de-emphasis, #adafb8);
+    --color-foreground: var(--on-surface-default, #e6e8f0);
+    --color-disabled: var(--surface-container, #2c2e35);
+    --color-disabled-foreground: var(--disabled-foreground, #797c90);
+  }
+}
+
+.dark {
+  --color-primary: var(--primary, #336ef3);
+  --color-primary-hover: var(--primary-hover, #395fe1);
+  --color-error: var(--brand-red, #ea4335);
+  --color-warning: var(--brand-yellow, #fbbc04);
+  --color-success: var(--brand-green, #34a853);
+  --color-background: var(--surface-container-de-emphasis, #272930);
+  --color-card: var(--surface-container-de-emphasis, #272930);
+  --color-card-hover: var(--surface-container-high, #363840);
+  --color-border: var(--divider, #363840);
+  --color-input: var(--surface-container, #2c2e35);
+  --color-secondary: var(--surface-container-high, #363840);
+  --color-secondary-hover: var(--surface-container-highest, #42444d);
+  --color-accent: var(--surface-container-highest, #42444d);
+  --color-accent-foreground: var(--on-surface-default, #e6e8f0);
+  --color-muted: var(--surface-container, #2c2e35);
+  --color-muted-foreground: var(--on-surface-de-emphasis, #adafb8);
+  --color-foreground: var(--on-surface-default, #e6e8f0);
+  --color-disabled: var(--surface-container, #2c2e35);
+  --color-disabled-foreground: var(--disabled-foreground, #797c90);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert();
+    opacity: .7;
+  }
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert();
+  opacity: .7;
+}
+
+[dir="rtl"] svg {
+  direction: ltr;
+}
+
+[dir="rtl"] svg text {
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .material-icons {
+  direction: rtl;
+}
+
+@keyframes neonSlideIn {
+  0% {
+    opacity: 0;
+    filter: brightness(2.5) blur(1px);
+    transform: translateX(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness() blur();
+    transform: translateX(0);
+  }
+}
+
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-leading {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ordinal {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-slashed-zero {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-figure {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-spacing {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-numeric-fraction {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --tw-blur {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-invert {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-duration {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-ease {
+  syntax: "*";
+  inherits: false
+}
+
+@keyframes ping {
+  75%, 100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(.8, 0, 1, 1);
+    transform: translateY(-25%);
+  }
+
+  50% {
+    animation-timing-function: cubic-bezier(0, 0, .2, 1);
+    transform: none;
+  }
+}
+
+</style><link href="https://www.gstatic.com/_/mss/search-next/_/ss/k=search-next.ss.TQsxQv8pJhs.L.B1.O/am=AB4AAACGACFQAg/d=1/ed=1/dg=2/rs=AE5fCmS6gw52GNq_ukdifS7iYg4Lmn-MyA/ee=/m=capy_widget_colors" rel="stylesheet"></head>
+    <body class="">
+  
+  <div id="root"><div dir="ltr" lang="ja" class="w-full bg-card text-foreground font-sans select-none overflow-hidden"><div class="bg-black/80 px-4 py-2 border-b border-border overflow-x-auto flex items-center gap-1.5 scrollbar-none"><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800" style="">1: Deep Violet Ambient</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800" style="">2: Neon Crimson Atmospheric</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 text-white font-bold scale-105 shadow-md" style="background-color: rgb(0, 255, 255); text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px;">3: Electric Cyan Echoes</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">4: Toxic Green Resonance</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">5: Cyber Orange Horizon</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">6: Magenta Deep Space</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">7: Laser Yellow Nebula</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">8: Deep Ultraviolet Hum</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">9: Synth Pink Atmosphere</button><button class="px-3 py-1 text-[11px] font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 bg-muted text-muted-foreground hover:bg-zinc-800">10: Hyper Chaos Drone</button></div><div class="relative w-full overflow-hidden border-b border-border bg-[#0d0714]"><div class="absolute top-0 end-0 p-3 z-10 flex items-center gap-2 justify-end pointer-events-none"><button class="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors bg-black/60 hover:bg-black/80 text-white focus:outline-none pointer-events-auto" aria-label="サウンドをミュート"><span class="material-icons !text-base">volume_up</span></button><button class="w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors shadow-none bg-black/60 hover:bg-black/80 text-white focus:outline-none pointer-events-auto disabled:opacity-40" aria-label="アニメーションを再生"><span class="material-icons !text-base">play_arrow</span></button></div><div class="absolute top-0 start-0 w-full p-4 flex items-center justify-between pointer-events-none z-10"><div class="flex flex-col gap-1.5 bg-black/50 backdrop-blur-md p-3.5 rounded-xl border border-cyan-500/30 min-w-[160px]"><div class="flex items-center gap-2"><span class="text-xs font-bold tracking-wider" style="color: rgb(0, 255, 255);">LAP 3</span><div class="flex items-end gap-[2px] h-[16px] px-1"><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div><div class="w-[2px] rounded-t-sm transition-all duration-75" style="height: 3px; background-color: rgb(0, 255, 255); box-shadow: rgb(0, 255, 255) 0px 0px 6px;"></div></div></div><div class="text-[11px] font-bold tracking-wide uppercase truncate max-w-[140px] text-white animate-[neonSlideIn_0.4s_ease-out_forwards]" style="text-shadow: rgb(0, 255, 255) 0px 0px 4px, rgb(0, 255, 255) 0px 0px 10px;">Electric Cyan Echoes</div></div><div class="flex-1 max-w-sm mx-6 bg-black/40 backdrop-blur-sm p-3 rounded-xl border border-pink-500/30 invisible sm:visible"><div class="flex justify-between items-center mb-1"><div class="flex items-center gap-1 text-pink-500"><span class="material-icons !text-sm">favorite</span><span class="text-[11px] font-medium tracking-wider text-pink-400">SHIELD INTEGRITY</span></div><span class="text-xs font-mono font-medium text-pink-400">85%</span></div><div class="w-full bg-zinc-900 rounded-full h-2 overflow-hidden border border-pink-900/40"><div class="h-full transition-all duration-300 shadow-[0_0_10px_currentColor]" style="width: 85%; background-color: rgb(0, 255, 255);"></div></div></div></div><svg role="img" aria-label="3D Synthwave Cyberpunk Racing Game Simulation Viewport" viewBox="0 0 800 416" class="w-full h-auto block transition-transform duration-75" style="transform: translate(0px, 0px) scale(1); filter: none;"><defs><linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#01080d"></stop><stop offset="60%" stop-color="#031d29"></stop><stop offset="100%" stop-color="#073a4d"></stop></linearGradient><linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00ffff"></stop><stop offset="50%" stop-color="#ff5500"></stop><stop offset="100%" stop-color="#ffcc00"></stop></linearGradient><linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#120621"></stop><stop offset="100%" stop-color="#05010a"></stop></linearGradient></defs><rect width="800" height="145.6" fill="url(#skyGrad)" class="transition-all duration-300"></rect><g transform="translate(400, 145.6)"><circle cx="0" cy="-20" r="55" fill="url(#sunGrad)" class="transition-all duration-300"></circle><rect x="-60" y="-18" width="120" height="2" fill="#01080d" opacity="0.4"></rect><rect x="-60" y="-10" width="120" height="3" fill="#01080d" opacity="0.6"></rect><rect x="-60" y="-2" width="120" height="4" fill="#031d29"></rect><rect x="-60" y="4" width="120" height="6" fill="#073a4d"></rect></g><g fill="#ffffff"><circle cx="468" cy="0" r="1" opacity="0.5"></circle><circle cx="727.4999999999782" cy="79.59" r="2.700000000000003" opacity="0.8400000000000005"></circle><circle cx="146.99999999995634" cy="26.060000000000002" r="2.4000000000000057" opacity="0.7800000000000011"></circle><circle cx="310.49999999983265" cy="105.65" r="2.1000000000000227" opacity="0.7200000000000046"></circle><circle cx="569.99999999992" cy="52.120000000000005" r="1.8000000000000114" opacity="0.6600000000000024"></circle><circle cx="733.5" cy="131.70999999999998" r="1.5" opacity="0.6000000000000001"></circle><circle cx="152.99999999966894" cy="78.18" r="1.2000000000000455" opacity="0.5400000000000091"></circle><circle cx="412.50000000016735" cy="24.649999999999977" r="2.8999999999999773" opacity="0.8799999999999955"></circle><circle cx="615.9999999998327" cy="104.24000000000001" r="2.6000000000000227" opacity="0.8200000000000045"></circle><circle cx="35.499999999505235" cy="50.710000000000036" r="2.300000000000068" opacity="0.7600000000000137"></circle><circle cx="199" cy="130.29999999999995" r="2" opacity="0.7"></circle><circle cx="458.4999999996653" cy="76.76999999999998" r="1.7000000000000455" opacity="0.6400000000000091"></circle><circle cx="621.9999999993342" cy="23.24000000000001" r="1.400000000000091" opacity="0.5800000000000182"></circle><circle cx="41.499999998999556" cy="102.83000000000004" r="1.1000000000001364" opacity="0.5200000000000273"></circle><circle cx="301.0000000003347" cy="49.299999999999955" r="2.7999999999999545" opacity="0.859999999999991"></circle><circle cx="504.5" cy="128.88999999999987" r="2.5" opacity="0.8"></circle><circle cx="763.9999999996653" cy="75.36000000000001" r="2.2000000000000455" opacity="0.7400000000000091"></circle><circle cx="87.49999999933425" cy="21.829999999999927" r="1.900000000000091" opacity="0.6800000000000181"></circle><circle cx="346.9999999989959" cy="101.42000000000007" r="1.6000000000001364" opacity="0.6200000000000273"></circle><circle cx="510.49999999866486" cy="47.889999999999986" r="1.300000000000182" opacity="0.5600000000000364"></circle><circle cx="770" cy="127.4799999999999" r="1" opacity="0.5"></circle><circle cx="189.4999999979991" cy="73.95000000000005" r="2.700000000000273" opacity="0.8400000000000545"></circle><circle cx="392.99999999933425" cy="20.41999999999996" r="2.400000000000091" opacity="0.7800000000000182"></circle><circle cx="652.5000000006621" cy="100.00999999999965" r="2.099999999999909" opacity="0.7199999999999818"></circle></g><g opacity="0.35"><line x1="0" y1="145.6" x2="-600" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="53.333333333333336" y1="145.6" x2="-466.6666666666667" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="106.66666666666667" y1="145.6" x2="-333.3333333333333" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="160" y1="145.6" x2="-200" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="213.33333333333334" y1="145.6" x2="-66.66666666666666" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="266.6666666666667" y1="145.6" x2="66.66666666666671" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="320" y1="145.6" x2="200" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="373.33333333333337" y1="145.6" x2="333.3333333333334" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="426.6666666666667" y1="145.6" x2="466.66666666666674" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="480" y1="145.6" x2="600" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="533.3333333333334" y1="145.6" x2="733.3333333333335" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="586.6666666666667" y1="145.6" x2="866.6666666666669" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="640" y1="145.6" x2="1000" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="693.3333333333334" y1="145.6" x2="1133.3333333333335" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="746.6666666666667" y1="145.6" x2="1266.666666666667" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="800" y1="145.6" x2="1400" y2="416" stroke="#00ffff" stroke-width="1" class="transition-colors duration-300"></line><line x1="0" y1="413.29600000000244" x2="800" y2="413.29600000000244" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="187.96266666666912" x2="800" y2="187.96266666666912" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="233.02933333333579" x2="800" y2="233.02933333333579" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="278.0960000000025" x2="800" y2="278.0960000000025" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="323.1626666666691" x2="800" y2="323.1626666666691" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="368.22933333333583" x2="800" y2="368.22933333333583" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line><line x1="0" y1="413.29600000000244" x2="800" y2="413.29600000000244" stroke="#00ffff" stroke-width="1.2" class="transition-colors duration-300"></line></g><line x1="0" y1="145.6" x2="800" y2="145.6" stroke="#00ffff" stroke-width="2" opacity="0.8"></line><polygon points="355,145.6 445,145.6 720,416 80,416" fill="url(#roadGrad)"></polygon><line x1="355" y1="145.6" x2="70" y2="416" stroke="#00ffff" stroke-width="4" opacity="0.9"></line><line x1="445" y1="145.6" x2="730" y2="416" stroke="#00ffff" stroke-width="4" opacity="0.9"></line><g stroke="#ffffff" stroke-width="1.5" stroke-dasharray="8,12" opacity="0.4"><g><line x1="372.8399999999981" y1="180.21120000000542" x2="365.2399999999981" y2="201.8432000000054"></line><line x1="427.1600000000019" y1="180.21120000000542" x2="434.7600000000019" y2="201.8432000000054"></line></g><g><line x1="353.8399999999981" y1="234.2912000000054" x2="346.2399999999981" y2="255.9232000000054"></line><line x1="446.1600000000019" y1="234.2912000000054" x2="453.7600000000019" y2="255.9232000000054"></line></g><g><line x1="334.8399999999981" y1="288.3712000000054" x2="327.2399999999981" y2="310.0032000000054"></line><line x1="465.1600000000019" y1="288.3712000000054" x2="472.7600000000019" y2="310.0032000000054"></line></g><g><line x1="315.8399999999981" y1="342.4512000000054" x2="308.2399999999981" y2="364.0832000000054"></line><line x1="484.1600000000019" y1="342.4512000000054" x2="491.7600000000019" y2="364.0832000000054"></line></g><g><line x1="296.8399999999981" y1="396.53120000000536" x2="290" y2="416"></line><line x1="503.1600000000019" y1="396.53120000000536" x2="510" y2="416"></line></g><g><line x1="372.8399999999981" y1="180.21120000000542" x2="365.2399999999981" y2="201.8432000000054"></line><line x1="427.1600000000019" y1="180.21120000000542" x2="434.7600000000019" y2="201.8432000000054"></line></g></g><g opacity="1"><polygon points="560.5668660346873,316.4221616801287 571.0634391904163,331.41726618831285 560.5668660346873,346.412370696497 550.0702928789584,331.41726618831285" fill="#22d3ee" stroke="#ffffff" stroke-width="1.5" class="drop-shadow-[0_0_8px_#06b6d4]"></polygon></g><g opacity="0.7019600285110066"><ellipse cx="400" cy="167.14256719374643" rx="7.684704068426416" ry="3.0738816273705667" fill="#00ffff" opacity="0.3" filter="blur(4px)"></ellipse><polygon points="393.596079942978,168.42335120515082 394.8768639543824,162.659823153831 396.798039971489,160.7386471367244 400,162.0194311481288 403.201960028511,160.7386471367244 405.1231360456176,162.659823153831 406.403920057022,168.42335120515082 400,166.50217518804422" fill="#10000a" stroke="#00ffff" stroke-width="1.8"></polygon><circle cx="400" cy="163.9406071652354" r="2" fill="#ffffff"></circle></g><g transform="translate(214.14923863137892, 375.43999999999994) rotate(1.0682002202732734e-57) translate(-214.14923863137892, -375.43999999999994)"><g opacity="0.3"><path d="M 187.14923863137892 378.8399999999999 L 127.74923863137892 454.43999999999994 L 300.5492386313789 454.43999999999994 Z" fill="url(#sunGrad)" opacity="0.3" filter="blur(6px)"></path><path d="M 200.64923863137892 382.23999999999995 L 170.94923863137893 444.43999999999994 L 257.3492386313789 444.43999999999994 Z" fill="#00ffff" opacity="0.6" filter="blur(2px)"></path></g><ellipse cx="214.14923863137892" cy="383.43999999999994" rx="48.6" ry="12" fill="none" stroke="#00ffff" stroke-width="3.5" opacity="0.7"></ellipse><polygon points="187.14923863137892,389.03999999999996 189.8492386313789,365.23999999999995 206.04923863137893,355.03999999999996 222.24923863137892,355.03999999999996 238.44923863137893,365.23999999999995 241.14923863137892,389.03999999999996 214.14923863137892,392.43999999999994" fill="#0c0714" stroke="#00ffff" stroke-width="2.5"></polygon></g></svg></div><div class="flex items-center justify-center gap-x-4 sm:gap-x-12 border-b border-border px-5 py-3.5 shrink-0 bg-zinc-950/20"><div class="flex flex-col items-center gap-0.5 min-w-0 flex-1"><span class="text-xs font-medium truncate text-center w-full" style="color: rgb(0, 255, 255);">HP SYSTEM</span><span class="text-sm font-medium text-foreground tabular-nums truncate text-center w-full">85%</span></div><div class="flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800"><span class="text-xs text-muted-foreground font-medium truncate text-center w-full">LAP SCORE</span><span class="text-sm font-medium text-foreground tabular-nums truncate text-center w-full">3</span></div><div class="flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800"><span class="text-xs text-cyan-400 font-medium truncate text-center w-full">VELOCITY</span><span class="text-sm font-medium text-foreground tabular-nums truncate text-center w-full">333 km/h</span></div><div class="flex flex-col items-center gap-0.5 min-w-0 flex-1 border-l border-zinc-800"><span class="text-xs text-yellow-400 font-medium truncate text-center w-full">SCORE</span><span class="text-sm font-medium text-foreground tabular-nums truncate text-center w-full">104</span></div></div><div class="p-5 flex flex-col gap-4 bg-card"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"><div class="w-full sm:w-64"><label class="block text-sm font-medium text-muted-foreground mb-1.5">SYSTEM PROTOCOL</label><div class="relative h-9 rounded-lg bg-muted px-3 flex items-center"><span class="text-sm font-medium text-foreground">通常巡航モード (EASY)</span><span class="material-icons absolute end-2.5 top-1/2 -translate-y-1/2 pointer-events-none !text-base text-muted-foreground">expand_more</span><select class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-11 w-full opacity-0 cursor-pointer pointer-events-auto disabled:cursor-not-allowed" aria-label="システムプロトコル選択"><option value="easy">通常巡航モード (EASY)</option><option value="hard">高速無限突破モード (HARD)</option></select></div></div><div class="flex items-center gap-3"><button class="w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-zinc-800 text-pink-500 border border-pink-500/20 focus:outline-none transition-transform active:scale-95 disabled:opacity-40" aria-label="左移動"><span class="material-icons !text-lg">arrow_back</span></button><button class="w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-zinc-800 text-cyan-400 border border-cyan-500/20 focus:outline-none transition-transform active:scale-95 disabled:opacity-40" aria-label="右移動"><span class="material-icons !text-lg">arrow_forward</span></button></div></div><div class="text-xs text-muted-foreground font-normal leading-relaxed pt-1 border-t border-border/40">上部のパターンスイッチャーまたはラップクリアで10種のサイバーパンクBGM進行＆ネオン空模様が鮮やかに切り替わります。曲の切り替わり時には、ワープ効果と完全に同期したド派手な「サイバー・ネオン花火演出（カラフルな高輝度ピクセルバースト）」が画面いっぱいに炸裂します！左右矢印キーや画面ボタンで移動し、障害物をハック回避してください。</div></div></div></div></body></html>
